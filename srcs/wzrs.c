@@ -6,26 +6,26 @@
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 12:24:17 by shunt             #+#    #+#             */
-/*   Updated: 2019/07/14 00:01:25 by shunt            ###   ########.fr       */
+/*   Updated: 2019/06/24 12:24:19 by shunt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	wzrs(char **t)
+void    wzrs(char **t)
 {
-	int		i;
-	int		j;
-	char	*cp;
+    int     i;
+    int     j;
+    char    *cp;
 
-	i = strlen(*t);
-	while (--i >= 0 && (*t)[i] == '0')
-		;
-	cp = (char *)malloc(sizeof(char) * (i + 2));
-	cp[i + 1] = '\0';
-	j = -1;
-	while (++j < i + 1)
-		cp[j] = (*t)[j];
-	free(*t);
-	*t = cp;
+    i = strlen(*t);
+    while (--i >= 0 && (*t)[i] == '0')
+        ;
+    cp = (char *)malloc(sizeof(char) * (i + 2));
+    cp[i + 1] = '\0';
+    j = -1;
+    while (++j < i + 1)
+        cp[j] = (*t)[j];
+    free(*t);
+    *t = cp;
 }

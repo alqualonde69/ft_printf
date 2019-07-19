@@ -6,26 +6,26 @@
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 06:03:23 by shunt             #+#    #+#             */
-/*   Updated: 2019/07/14 00:01:59 by shunt            ###   ########.fr       */
+/*   Updated: 2019/06/20 06:03:25 by shunt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	zrs(char *s, int a, int i)
+void    zrs(char *s, int a, int i)
 {
-	char	*t;
-	char	*cl;
-	int		k;
+    char    *t;
+    char    *cl;
+    int     k;
 
-	t = (char *)malloc(sizeof(char) * (a + i + 2));
-	t[a + i + 1] = '\0';
-	k = -1;
-	while (s[++k])
-		t[k] = s[k];
-	while (k < a + i + 1)
-		t[k++] = '0';
-	cl = s;
-	s = t;
-	free(cl);
+    t = (char *)malloc(sizeof(char) * (a + i + 2));
+    t[a + i + 1] = '\0';
+    k = -1;
+    while (s[++k])
+        t[k] = s[k];
+    while (k < a + i + 1)
+        t[k++] = '0';
+    cl = s;
+    s = t;
+    free(cl);
 }

@@ -6,29 +6,34 @@
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 12:25:02 by shunt             #+#    #+#             */
-/*   Updated: 2019/07/13 23:58:13 by shunt            ###   ########.fr       */
+/*   Updated: 2019/06/24 12:25:03 by shunt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	rndg_z(char *s, int i)
+void    rndg_z(char *s, int i, unsigned short int c)
 {
-	char	*t;
-	int		l;
+    char    *t;
+    int     l;
 
-	if (s[i + 1] < '5' || (s[i + 1] == '5' && !(s[i - 1] % 2)))
-		s[i + 1] = '\0';
-	else if (s[i + 1] > '5' ||
-			(s[i + 1] == '5' && s[i - 1] % 2))
-	{
-		s[i] = '\0';
-		l = strlen(s);
-		t = (char *)malloc(sizeof(char) * (l + 1));
-		memset(t, '0', l);
-		t[l] = '\0';
-		t[l - 1] = '1';
-		s = str_ad(s, t);
-		free(t);
-	}
+    if (s[i + 1] < '5' || (s[i + 1] == '5' && !(s[i - 1] % 2)))
+    {
+        if (c == 8)
+            s[i + 1] = '\0';
+        else
+            s[i] = '\0';
+    }
+    else if (s[i + 1] > '5' ||
+             (s[i + 1] == '5' && s[i - 1] % 2))
+    {
+        s[i] = '\0';
+        l = strlen(s);
+        t = (char *) malloc(sizeof(char) * (l + 1));
+        memset(t, '0', l);
+        t[l] = '\0';
+        t[l - 1] = '1';
+        s = str_ad(s, t);
+        free(t);
+    }
 }

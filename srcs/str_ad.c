@@ -6,25 +6,24 @@
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 08:06:08 by shunt             #+#    #+#             */
-/*   Updated: 2019/07/13 23:59:42 by shunt            ###   ########.fr       */
+/*   Updated: 2019/06/14 08:06:10 by shunt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*str_ad(char *s1, char *s2)
+char    *str_ad(char *s1, char *s2)
 {
-	int		i;
-
-	i = ft_strlen(s1);
-	while (--i > -1)
-	{
-		s1[i] = s1[i] - '0' + s2[i];
-		if (s1[i] > '9')
-		{
-			s1[i] -= 10;
-			++s1[i - 1];
-		}
-	}
-	return (s1);
+    int     i;
+    i = strlen(s1);
+    while (--i > -1)
+    {
+        s1[i] = s1[i] - '0' + s2[i];
+        if (s1[i] > '9')
+        {
+            s1[i] -= 10;
+            ++s1[i - 1];
+        }
+    }
+    return (s1);
 }

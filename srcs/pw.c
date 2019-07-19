@@ -6,19 +6,19 @@
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 08:02:19 by shunt             #+#    #+#             */
-/*   Updated: 2019/07/13 23:30:44 by shunt            ###   ########.fr       */
+/*   Updated: 2019/06/14 08:02:22 by shunt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-long long	pw(long long n, int p)
+long long   pw(long long n, int p)
 {
-	if (p == 0)
-		return (1);
-	if (p == 1)
-		return (n);
-	if (p > 1)
-		n *= pw(n, p - 1);
-	return (n);
+    if (p == 0)
+        return (1);
+    if (p == 1)
+        return (n);
+    if (p > 1)
+        n *= pw(n, p - 1);
+    return (n);
 }
