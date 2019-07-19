@@ -6,19 +6,18 @@
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 23:06:53 by shunt             #+#    #+#             */
-/*   Updated: 2019/07/13 22:32:15 by shunt            ###   ########.fr       */
+/*   Updated: 2019/06/03 23:06:55 by shunt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_c(char c)
+char    *ft_c(char c)
 {
-	char	*s;
-
-	if (!*(s = (char *)malloc(sizeof(char) * 2)))
-		return (NULL);
-	s[0] = c;
-	s[1] = '\0';
-	return (s);
+    char    *s;
+    if (!*(s = (char *)malloc(sizeof(char) * 2)))
+        return (NULL);
+    s[0] = c;
+    s[1] = '\0';
+    return (s);
 }

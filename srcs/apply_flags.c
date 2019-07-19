@@ -154,10 +154,10 @@ int    ft_app_fl(t_rd **read)
 	b = 0;
 	if ((*read)->mod)
 	{
-		if ((*read)->flag == 2 && (*read)->mod[0] != '-') /* For Positive nbr */
+		if ((*read)->flag == 2 && (*read)->mod[0] != '-')
 		{
 			strlen = ft_strlen((*read)->mod);
-			if (!(res = (char *)malloc(sizeof(char) * (strlen + 2))))
+			if (!(res = (char *) malloc(sizeof(char) * (strlen + 2))))
 				return (0);
 			res[strlen + 1] = '\0';
 			res[0] = '+';
@@ -170,10 +170,10 @@ int    ft_app_fl(t_rd **read)
 			(*read)->mod = res;
 			free((void *) tmp);
 		}
-	if ((*read)->flag == 4 && (*read)->mod[0] != '-') /* ' ' flag */
-	{
-		strlen = ft_strlen((*read)->mod);
-		if (!(res = (char *)malloc(sizeof(char) * (strlen + 2))))
+		if ((*read)->flag == 4 && (*read)->mod[0] != '-') /* ' ' flag */
+		{
+			strlen = ft_strlen((*read)->mod);
+			if (!(res = (char *) malloc(sizeof(char) * (strlen + 2))))
 				return (0);
 			res[strlen + 1] = '\0';
 			res[0] = ' ';
@@ -188,8 +188,62 @@ int    ft_app_fl(t_rd **read)
 		}
 //	вместо знака у положит чисел (если есть ширина, то не выводится)
 //		;
-//	if ((*read)->flag == 8) ##########
-//		;
+		if ((*read)->flag == 8) /* '#' */
+		{
+			if ((*read)->mod_smb == 'o')
+			{
+				strlen = ft_strlen((*read)->mod);
+				if (!(res = (char *) malloc(sizeof(char) * (strlen + 2))))
+					return (0);
+				res[strlen + 1] = '\0';
+				res[0] = '0';
+				while ((*read)->mod[i])
+				{
+					res[++b] = (*read)->mod[i];
+					++i;
+				}
+				tmp = (*read)->mod;
+				(*read)->mod = res;
+				free((void *) tmp);
+
+			}
+			if ((*read)->mod_smb == 'x')
+			{
+				b = 1;
+				strlen = ft_strlen((*read)->mod);
+				if (!(res = (char *) malloc(sizeof(char) * (strlen + 3))))
+					return (0);
+				res[strlen + 2] = '\0';
+				res[0] = '0';
+				res[1] = 'x';
+				while ((*read)->mod[i])
+				{
+					res[++b] = (*read)->mod[i];
+					++i;
+				}
+				tmp = (*read)->mod;
+				(*read)->mod = res;
+				free((void *) tmp);
+			}
+			if ((*read)->mod_smb == 'X')
+			{
+				b = 1;
+				strlen = ft_strlen((*read)->mod);
+				if (!(res = (char *) malloc(sizeof(char) * (strlen + 3))))
+					return (0);
+				res[strlen + 2] = '\0';
+				res[0] = '0';
+				res[1] = 'X';
+				while ((*read)->mod[i])
+				{
+					res[++b] = (*read)->mod[i];
+					++i;
+				}
+				tmp = (*read)->mod;
+				(*read)->mod = res;
+				free((void *) tmp);
+			}
+		}
 	}
 	return (SUCCESS);
 }
@@ -210,4 +264,3 @@ int    ft_solver(t_rd **read, t_out *output)
 		return (0);
 	return (1);
 }
-//менять все в mod, а выводить уже в конце в ft_app_empty_fl

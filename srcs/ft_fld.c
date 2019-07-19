@@ -6,34 +6,35 @@
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 01:46:25 by shunt             #+#    #+#             */
-/*   Updated: 2019/07/13 22:59:30 by shunt            ###   ########.fr       */
+/*   Updated: 2019/06/07 01:46:27 by shunt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_fld(long double f, int c)
+char    *ft_fld(long double f, int c)
 {
-	t_flts	l;
-	int		s[2];
-	char	*res;
-	char	*in;
-	char	*fr;
+    t_flts  l;
+    int     sign;
+    char    *res;
+    char    *in;
+    char    *fr;
+    int     e;
 
-	l.u = f;
-	if (!(res = mantis(l)))
-		return (NULL);
-	s[0] = (l.y[4] & 0x8000) ? 1 : 0;
-	s[1] = mexp(l);
-	if (s[1] == 16384)
-		return (fld_edge(&res, s[0], c));
-	if (!(in = int_p(s[1] + 1, res)))
-		return (NULL);
-	if (!(fr = fr_p(s[1], res)))
-		return (NULL);
-	free(res);
-	res = (s[1] < 63) ? res_w_fr(s[1], in, fr, s[0]) : res_o_fr(in, s[0]);
-	free(in);
-	free(fr);
-	return (res ? res : NULL);
+    l.u = f;
+    if (!(res = mantis(l)))
+        return (NULL);
+    sign = (l.y[4] & 0x8000) ? 1 : 0;
+    e = mexp(l);
+    if (e == 16384)
+        return (fld_edge(&res, sign, c));
+    if (!(in = int_p(e + 1, res)))
+        return (NULL);
+    if (!(fr = fr_p(e, res)))
+        return (NULL);
+    free(res);
+    res = (e < 63) ? res_w_fr(e, in, fr, sign) : res_o_fr(in, sign);
+    free(in);
+    free(fr);
+    return (res ? res : NULL);
 }

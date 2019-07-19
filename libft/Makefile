@@ -6,7 +6,7 @@
 #    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 18:14:41 by doberyn           #+#    #+#              #
-#    Updated: 2019/07/14 00:39:04 by shunt            ###   ########.fr        #
+#    Updated: 2019/07/05 20:34:58 by huller           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ SRC_NAME = ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
-all:  $(NAME)
+all: head $(NAME)
 
 head:
 	@echo -n c

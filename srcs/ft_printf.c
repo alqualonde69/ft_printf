@@ -35,6 +35,12 @@ int ft_pt_frst(const char *format, t_out *output, t_rd **rd)
 	i = 0;
 	b = -1;
 	tmp = (*rd)->smb_cnt;
+	if (format[(*rd)->smb_cnt] == '%' && format[(*rd)->smb_cnt + 1] == '%')
+	{
+		if (!(ft_put_percent(format, output, rd)))
+			return (0);
+		return (SUCCESS);
+	}
 	while (format[(*rd)->smb_cnt] && format[(*rd)->smb_cnt] != '%')
 	{
 		(*rd)->smb_cnt++;
@@ -52,17 +58,17 @@ int ft_pt_frst(const char *format, t_out *output, t_rd **rd)
 	(*output).buf = ft_strjoin((*output).buf, res);
 	free((void *)res);
 	tmp2 ? free((void *)tmp2) : 0;
-	format[(*rd)->smb_cnt] == '\0' ? (*rd)->smb_cnt-- : 0;
+	//format[(*rd)->smb_cnt] == '\0' ? (*rd)->smb_cnt-- : 0;
 	return (SUCCESS);
 }
 
-void ft_reader(t_rd **read, va_list *ap, const char *format)
+void ft_reader(t_rd **read, va_list *ap, const char *format, t_out *out)
 {
 	ft_chck_flags(read, format);
 	ft_chck_wdth(read, format, &ap);
 	ft_chck_precision(read, format, &ap);
 	ft_chck_size(read, format, &ap);
-	ft_chck_mod(read, format, &ap);
+	ft_chck_mod(read, format, &ap, out);
 	if (((*read)->mod_smb == 'd' || (*read)->mod_smb == 'i') &&
 		(*read)->prs == 6 && (*read)->kostil != 1)
 		(*read)->prs = 0;
@@ -101,7 +107,7 @@ int ft_printf(const char *format, ...)
 			return (0);
 		if (!(ft_pt_frst(format, &p.output, &p.read)))
 			return (0);
-		ft_reader(&p.read, &p.ap, format);
+		ft_reader(&p.read, &p.ap, format, &p.output);
 		if (!(ft_solver(&p.read, &p.output)))
 			return (0);
 		tmp = p.read;
