@@ -16,7 +16,34 @@ void	chck_sr(t_rd **read, va_list **ap, int a)
 {
 	(*read)->mod_smb = a ? 's' : 'r';
 	if ((*read)->size == 1 || !a)
-		(*read)->mod2 = (va_arg(**ap, wchar_t *));
+	{
+        (*read)->mod2 = (va_arg(**ap, wchar_t *));
+        if (!(*read)->mod2)
+        {
+            (*read)->mod2 = (char *)malloc(sizeof(char) * 7);
+            (*read)->mod2[0] = '(';
+            (*read)->mod2[1] = 'n';
+            (*read)->mod2[2] = 'u';
+            (*read)->mod2[3] = 'l';
+            (*read)->mod2[4] = 'l';
+            (*read)->mod2[5] = ')';
+            (*read)->mod2[6] = '\0';
+        }
+    }
 	else
-		(*read)->mod = (va_arg(**ap, char *));
+    {
+	    (*read)->mod = (va_arg(**ap, char *));
+        if (!(*read)->mod)
+        {
+            (*read)->mod = (char *)malloc(sizeof(char) * 7);
+            (*read)->mod[0] = '(';
+            (*read)->mod[1] = 'n';
+            (*read)->mod[2] = 'u';
+            (*read)->mod[3] = 'l';
+            (*read)->mod[4] = 'l';
+            (*read)->mod[5] = ')';
+            (*read)->mod[6] = '\0';
+
+        }
+    }
 }

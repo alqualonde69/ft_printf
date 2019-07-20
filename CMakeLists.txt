@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.14)
-project(ft_printf C)
+project(20_07_sec C)
 
 set(CMAKE_C_STANDARD 11)
 
 include_directories(includes)
 include_directories(libft/includes)
 
-add_executable(ft_printf
+add_executable(20_07_sec
         includes/ft_printf.h
         libft/includes/get_next_line.h
         libft/includes/libft.h
@@ -76,6 +76,17 @@ add_executable(ft_printf
         srcs/add_z.c
         srcs/apply_flags.c
         srcs/c_str.c
+        srcs/chck_b.c
+        srcs/chck_c.c
+        srcs/chck_di.c
+        srcs/chck_e.c
+        srcs/chck_f.c
+        srcs/chck_g.c
+        srcs/chck_o.c
+        srcs/chck_p.c
+        srcs/chck_sr.c
+        srcs/chck_x.c
+        srcs/chck_xu.c
         srcs/e_zrs.c
         srcs/fld_edge.c
         srcs/fr_p.c
@@ -90,6 +101,7 @@ add_executable(ft_printf
         srcs/ft_ox.c
         srcs/ft_p.c
         srcs/ft_printf.c
+        srcs/ft_put_percent.c
         srcs/ft_rg.c
         srcs/ft_round.c
         srcs/int_p.c
@@ -110,16 +122,4 @@ add_executable(ft_printf
         srcs/t_str.c
         srcs/wzrs.c
         srcs/zrs.c
-        srcs/main.c
-        srcs/chck_b.c
-        srcs/chck_c.c
-        srcs/chck_di.c
-        srcs/chck_e.c
-        srcs/chck_f.c
-        srcs/chck_g.c
-        srcs/chck_o.c
-        srcs/chck_p.c
-        srcs/chck_sr.c
-        srcs/chck_x.c
-        srcs/chck_xu.c
-        srcs/ft_put_percent.c)
+        main.c)

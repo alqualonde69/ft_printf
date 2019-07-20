@@ -1,3 +1,3 @@
-/Users/shunt/Desktop/19.07/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/shunt/Desktop/19.07/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/shunt/Desktop/19.07/cmake-build-debug/CMakeFiles/ft_printf.dir
+/Users/shunt/Desktop/20.07.sec/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/shunt/Desktop/20.07.sec/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/shunt/Desktop/20.07.sec/cmake-build-debug/CMakeFiles/20_07_sec.dir

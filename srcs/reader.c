@@ -32,7 +32,7 @@ void		ft_chck_mod(t_rd **read, const char *format, va_list **ap, t_out *out)
 {
 	(*read)->mod = NULL;
 	(*read)->mod2 = NULL;
-    if ((*read)->flag == 8)
+    if ((*read)->flag == 8 || format[(*read)->smb_cnt] == '*')
         (*read)->smb_cnt++;
 	if (format[(*read)->smb_cnt] == 's' || format[(*read)->smb_cnt] == 'r')
 		format[(*read)->smb_cnt] == 's' ? chck_sr(read, ap, 1) :
@@ -55,14 +55,14 @@ void		ft_chck_mod(t_rd **read, const char *format, va_list **ap, t_out *out)
 		ft_k(read, format, ap, out);
 }
 
-void    ft_chck_size(t_rd **read, const char *format, va_list **ap)
+void    ft_chck_size(t_rd **read, const char *format/*, va_list **ap*/)
 {
     (*read)->size = 0;
 	if (format[(*read)->smb_cnt + 1])
 	{
-		if (format[(*read)->smb_cnt] == '*')
-			(*read)->size = va_arg(**ap, int);
-		else if (format[(*read)->smb_cnt] == 'l')
+//		if (format[(*read)->smb_cnt] == '*')
+//			(*read)->size = va_arg(**ap, int);
+		if (format[(*read)->smb_cnt] == 'l')
 			(*read)->size |= LONG_INT;
 		else if (format[(*read)->smb_cnt] == 'l' &&
 		         format[(*read)->smb_cnt + 1] == 'l')
