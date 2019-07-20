@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char	*ft_d(int n)
+char	*ft_d(int64_t n)
 {
 	char	*s;
 

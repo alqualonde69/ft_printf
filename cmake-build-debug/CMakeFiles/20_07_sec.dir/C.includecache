@@ -26,7 +26,11 @@ unistd.h
 string.h
 -
 
-/Users/shunt/Desktop/20.07.sec/srcs/chck_sr.c
+/Users/shunt/Desktop/my20/srcs/chck_u.c
 ft_printf.h
-/Users/shunt/Desktop/20.07.sec/srcs/ft_printf.h
+/Users/shunt/Desktop/my20/srcs/ft_printf.h
+
+/Users/shunt/Desktop/my20/srcs/reader.c
+ft_printf.h
+/Users/shunt/Desktop/my20/srcs/ft_printf.h
 

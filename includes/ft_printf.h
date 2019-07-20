@@ -118,6 +118,7 @@ void		chck_p(t_rd **read, va_list **ap);
 void		chck_sr(t_rd **read, va_list **ap, int a);
 void		chck_x(t_rd **read, va_list **ap);
 void		chck_xu(t_rd **read, va_list **ap);
+void        chck_u(t_rd **read, va_list **ap);
 int         chck_nthng(const char *format, t_out *output, t_rd **rd);
 
 /*
@@ -149,7 +150,8 @@ void    ft_out_cnt(t_out *output);
 **  TYPES
 */
 
-char            *ft_d(int n);
+char            *ft_d(int64_t n);
+char            *ft_u(u_int64_t n);
 char            *ft_c(char c);
 char            *ft_e(long double e, int a);
 char            *ft_ox(u_int64_t o, int a, int b);

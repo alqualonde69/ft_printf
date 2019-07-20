@@ -35,12 +35,6 @@ int ft_pt_frst(const char *format, t_out *output, t_rd **rd)
 	i = 0;
 	b = -1;
 	tmp = (*rd)->smb_cnt;
-	if (format[(*rd)->smb_cnt] == '%' && format[(*rd)->smb_cnt + 1] == '%')
-	{
-		if (!(ft_put_percent(format, output, rd)))
-			return (0);
-		return (SUCCESS);
-	}
 	while (format[(*rd)->smb_cnt] && format[(*rd)->smb_cnt] != '%')
 	{
 		(*rd)->smb_cnt++;
@@ -59,6 +53,12 @@ int ft_pt_frst(const char *format, t_out *output, t_rd **rd)
 	free((void *)res);
 	tmp2 ? free((void *)tmp2) : 0;
 	//format[(*rd)->smb_cnt] == '\0' ? (*rd)->smb_cnt-- : 0;
+	if (format[(*rd)->smb_cnt] == '%' && format[(*rd)->smb_cnt + 1] == '%')
+	{
+		if (!(ft_put_percent(format, output, rd)))
+			return (0);
+		return (SUCCESS);
+	}
 	return (SUCCESS);
 }
 

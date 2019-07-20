@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/shunt/Desktop/20.07.sec/includes -I/Users/shunt/Desktop/20.07.sec/libft/includes 
+C_INCLUDES = -I/Users/shunt/Desktop/my20/includes -I/Users/shunt/Desktop/my20/libft/includes 
 

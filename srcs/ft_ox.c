@@ -26,7 +26,7 @@ char    *ft_ox(u_int64_t o, int a, int b)
 		if (!(s = (b) ? u_itoa_base(o, 16, 1) : u_itoa_base(o, 16, 0)))
 			return (NULL);
 	}
-	//else if (a == 2)
+	else if (a == 2)
 		if (!(s = u_itoa_base(o, 2, 1)))
 			return (NULL);
 	return (s);

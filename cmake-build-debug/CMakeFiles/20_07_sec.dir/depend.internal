@@ -3,389 +3,397 @@
 
 CMakeFiles/20_07_sec.dir/libft/sources/ft_abs.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_abs.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_abs.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_atoi.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_atoi.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_atoi.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_bzero.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_bzero.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_bzero.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_factorial.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_factorial.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_factorial.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_isalnum.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_isalnum.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_isalnum.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_isalpha.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_isalpha.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_isalpha.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_isascii.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_isascii.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_isascii.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_isdigit.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_isdigit.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_isdigit.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_isprint.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_isprint.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_isprint.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_itoa.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_itoa.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_itoa.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_lstadd.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_lstadd.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_lstadd.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_lstdel.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_lstdel.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_lstdel.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_lstdelone.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_lstdelone.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_lstdelone.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_lstiter.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_lstiter.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_lstiter.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_lstmap.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_lstmap.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_lstmap.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_lstnew.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_lstnew.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_lstnew.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_memalloc.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_memalloc.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_memalloc.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_memccpy.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_memccpy.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_memccpy.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_memchr.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_memchr.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_memchr.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_memcmp.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_memcmp.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_memcmp.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_memcpy.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_memcpy.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_memcpy.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_memdel.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_memdel.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_memdel.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_memmove.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_memmove.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_memmove.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_memset.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_memset.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_memset.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_putchar.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_putchar.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_putchar.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_putchar_fd.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_putchar_fd.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_putchar_fd.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_putendl.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_putendl.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_putendl.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_putendl_fd.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_putendl_fd.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_putendl_fd.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_putnbr.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_putnbr.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_putnbr.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_putnbr_fd.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_putnbr_fd.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_putnbr_fd.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_putstr.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_putstr.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_putstr.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_putstr_fd.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_putstr_fd.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_putstr_fd.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_sqrt.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_sqrt.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_sqrt.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strcat.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strcat.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strcat.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strchr.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strchr.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strchr.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strclr.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strclr.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strclr.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strcmp.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strcmp.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strcmp.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strcpy.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strcpy.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strcpy.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strdel.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strdel.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strdel.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strdup.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strdup.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strdup.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strequ.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strequ.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strequ.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_striter.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_striter.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_striter.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_striteri.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_striteri.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_striteri.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strjoin.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strjoin.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strjoin.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strlcat.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strlcat.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strlcat.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strlen.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strlen.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strlen.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strmap.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strmap.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strmap.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strmapi.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strmapi.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strmapi.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strncat.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strncat.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strncat.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strncmp.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strncmp.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strncmp.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strncpy.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strncpy.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strncpy.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strnequ.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strnequ.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strnequ.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strnew.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strnew.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strnew.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strnstr.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strnstr.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strnstr.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strrchr.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strrchr.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strrchr.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strrev.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strrev.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strrev.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strsplit.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strsplit.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strsplit.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strstr.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strstr.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strstr.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strsub.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strsub.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strsub.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_strtrim.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_strtrim.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_strtrim.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_tolower.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_tolower.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_tolower.c
 CMakeFiles/20_07_sec.dir/libft/sources/ft_toupper.c.o
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/ft_toupper.c
+ /Users/shunt/Desktop/my20/libft/sources/ft_toupper.c
 CMakeFiles/20_07_sec.dir/libft/sources/get_next_line.c.o
  ../libft/includes/get_next_line.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/libft/sources/get_next_line.c
+ /Users/shunt/Desktop/my20/libft/sources/get_next_line.c
 CMakeFiles/20_07_sec.dir/main.c.o
- /Users/shunt/Desktop/20.07.sec/includes/ft_printf.h
- /Users/shunt/Desktop/20.07.sec/libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/main.c
+ /Users/shunt/Desktop/my20/includes/ft_printf.h
+ /Users/shunt/Desktop/my20/libft/includes/libft.h
+ /Users/shunt/Desktop/my20/main.c
 CMakeFiles/20_07_sec.dir/srcs/add_z.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/add_z.c
+ /Users/shunt/Desktop/my20/srcs/add_z.c
 CMakeFiles/20_07_sec.dir/srcs/apply_flags.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/apply_flags.c
+ /Users/shunt/Desktop/my20/srcs/apply_flags.c
 CMakeFiles/20_07_sec.dir/srcs/c_str.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/c_str.c
+ /Users/shunt/Desktop/my20/srcs/c_str.c
 CMakeFiles/20_07_sec.dir/srcs/chck_b.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/chck_b.c
+ /Users/shunt/Desktop/my20/srcs/chck_b.c
 CMakeFiles/20_07_sec.dir/srcs/chck_c.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/chck_c.c
+ /Users/shunt/Desktop/my20/srcs/chck_c.c
 CMakeFiles/20_07_sec.dir/srcs/chck_di.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/chck_di.c
+ /Users/shunt/Desktop/my20/srcs/chck_di.c
 CMakeFiles/20_07_sec.dir/srcs/chck_e.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/chck_e.c
+ /Users/shunt/Desktop/my20/srcs/chck_e.c
 CMakeFiles/20_07_sec.dir/srcs/chck_f.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/chck_f.c
+ /Users/shunt/Desktop/my20/srcs/chck_f.c
 CMakeFiles/20_07_sec.dir/srcs/chck_g.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/chck_g.c
+ /Users/shunt/Desktop/my20/srcs/chck_g.c
 CMakeFiles/20_07_sec.dir/srcs/chck_o.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/chck_o.c
+ /Users/shunt/Desktop/my20/srcs/chck_o.c
 CMakeFiles/20_07_sec.dir/srcs/chck_p.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/chck_p.c
+ /Users/shunt/Desktop/my20/srcs/chck_p.c
 CMakeFiles/20_07_sec.dir/srcs/chck_sr.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/chck_sr.c
+ /Users/shunt/Desktop/my20/srcs/chck_sr.c
+CMakeFiles/20_07_sec.dir/srcs/chck_u.c.o
+ ../includes/ft_printf.h
+ ../libft/includes/libft.h
+ /Users/shunt/Desktop/my20/srcs/chck_u.c
 CMakeFiles/20_07_sec.dir/srcs/chck_x.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/chck_x.c
+ /Users/shunt/Desktop/my20/srcs/chck_x.c
 CMakeFiles/20_07_sec.dir/srcs/chck_xu.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/chck_xu.c
+ /Users/shunt/Desktop/my20/srcs/chck_xu.c
 CMakeFiles/20_07_sec.dir/srcs/e_zrs.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/e_zrs.c
+ /Users/shunt/Desktop/my20/srcs/e_zrs.c
 CMakeFiles/20_07_sec.dir/srcs/fld_edge.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/fld_edge.c
+ /Users/shunt/Desktop/my20/srcs/fld_edge.c
 CMakeFiles/20_07_sec.dir/srcs/fr_p.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/fr_p.c
+ /Users/shunt/Desktop/my20/srcs/fr_p.c
 CMakeFiles/20_07_sec.dir/srcs/ft_c.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_c.c
+ /Users/shunt/Desktop/my20/srcs/ft_c.c
 CMakeFiles/20_07_sec.dir/srcs/ft_d.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_d.c
+ /Users/shunt/Desktop/my20/srcs/ft_d.c
 CMakeFiles/20_07_sec.dir/srcs/ft_e.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_e.c
+ /Users/shunt/Desktop/my20/srcs/ft_e.c
 CMakeFiles/20_07_sec.dir/srcs/ft_f.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_f.c
+ /Users/shunt/Desktop/my20/srcs/ft_f.c
 CMakeFiles/20_07_sec.dir/srcs/ft_fld.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_fld.c
+ /Users/shunt/Desktop/my20/srcs/ft_fld.c
 CMakeFiles/20_07_sec.dir/srcs/ft_g.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_g.c
+ /Users/shunt/Desktop/my20/srcs/ft_g.c
 CMakeFiles/20_07_sec.dir/srcs/ft_itoa_base.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_itoa_base.c
+ /Users/shunt/Desktop/my20/srcs/ft_itoa_base.c
 CMakeFiles/20_07_sec.dir/srcs/ft_itoa_fp.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_itoa_fp.c
+ /Users/shunt/Desktop/my20/srcs/ft_itoa_fp.c
 CMakeFiles/20_07_sec.dir/srcs/ft_ox.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_ox.c
+ /Users/shunt/Desktop/my20/srcs/ft_ox.c
 CMakeFiles/20_07_sec.dir/srcs/ft_p.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_p.c
+ /Users/shunt/Desktop/my20/srcs/ft_p.c
 CMakeFiles/20_07_sec.dir/srcs/ft_printf.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_printf.c
+ /Users/shunt/Desktop/my20/srcs/ft_printf.c
 CMakeFiles/20_07_sec.dir/srcs/ft_put_percent.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_put_percent.c
+ /Users/shunt/Desktop/my20/srcs/ft_put_percent.c
 CMakeFiles/20_07_sec.dir/srcs/ft_rg.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_rg.c
+ /Users/shunt/Desktop/my20/srcs/ft_rg.c
 CMakeFiles/20_07_sec.dir/srcs/ft_round.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/ft_round.c
+ /Users/shunt/Desktop/my20/srcs/ft_round.c
+CMakeFiles/20_07_sec.dir/srcs/ft_u.c.o
+ ../includes/ft_printf.h
+ ../libft/includes/libft.h
+ /Users/shunt/Desktop/my20/srcs/ft_u.c
 CMakeFiles/20_07_sec.dir/srcs/int_p.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/int_p.c
+ /Users/shunt/Desktop/my20/srcs/int_p.c
 CMakeFiles/20_07_sec.dir/srcs/mantis.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/mantis.c
+ /Users/shunt/Desktop/my20/srcs/mantis.c
 CMakeFiles/20_07_sec.dir/srcs/mexp.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/mexp.c
+ /Users/shunt/Desktop/my20/srcs/mexp.c
 CMakeFiles/20_07_sec.dir/srcs/pw.c.o
- /Users/shunt/Desktop/20.07.sec/srcs/pw.c
+ /Users/shunt/Desktop/my20/srcs/pw.c
 CMakeFiles/20_07_sec.dir/srcs/pw_to_str.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/pw_to_str.c
+ /Users/shunt/Desktop/my20/srcs/pw_to_str.c
 CMakeFiles/20_07_sec.dir/srcs/reader.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/reader.c
+ /Users/shunt/Desktop/my20/srcs/reader.c
 CMakeFiles/20_07_sec.dir/srcs/res_o_fr.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/res_o_fr.c
+ /Users/shunt/Desktop/my20/srcs/res_o_fr.c
 CMakeFiles/20_07_sec.dir/srcs/res_w_fr.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/res_w_fr.c
+ /Users/shunt/Desktop/my20/srcs/res_w_fr.c
 CMakeFiles/20_07_sec.dir/srcs/rnd.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/rnd.c
+ /Users/shunt/Desktop/my20/srcs/rnd.c
 CMakeFiles/20_07_sec.dir/srcs/rnd_z.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/rnd_z.c
+ /Users/shunt/Desktop/my20/srcs/rnd_z.c
 CMakeFiles/20_07_sec.dir/srcs/rndg.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/rndg.c
+ /Users/shunt/Desktop/my20/srcs/rndg.c
 CMakeFiles/20_07_sec.dir/srcs/rndg_z.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/rndg_z.c
+ /Users/shunt/Desktop/my20/srcs/rndg_z.c
 CMakeFiles/20_07_sec.dir/srcs/s_str.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/s_str.c
+ /Users/shunt/Desktop/my20/srcs/s_str.c
 CMakeFiles/20_07_sec.dir/srcs/str_ad.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/str_ad.c
+ /Users/shunt/Desktop/my20/srcs/str_ad.c
 CMakeFiles/20_07_sec.dir/srcs/str_ml.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/str_ml.c
+ /Users/shunt/Desktop/my20/srcs/str_ml.c
 CMakeFiles/20_07_sec.dir/srcs/t_str.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/t_str.c
+ /Users/shunt/Desktop/my20/srcs/t_str.c
 CMakeFiles/20_07_sec.dir/srcs/wzrs.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/wzrs.c
+ /Users/shunt/Desktop/my20/srcs/wzrs.c
 CMakeFiles/20_07_sec.dir/srcs/zrs.c.o
  ../includes/ft_printf.h
  ../libft/includes/libft.h
- /Users/shunt/Desktop/20.07.sec/srcs/zrs.c
+ /Users/shunt/Desktop/my20/srcs/zrs.c
