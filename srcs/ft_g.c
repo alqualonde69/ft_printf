@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char    *ft_g(long double g, int a, int b, unsigned short int c)
+char    *ft_g(long double g, int a, size_t b, unsigned short int c)
 {
     char    *f;
     char    *e;

@@ -113,6 +113,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/20_07_sec.dir/srcs/zrs.c.o"
   "CMakeFiles/20_07_sec.dir/srcs/chck_u.c.o"
   "CMakeFiles/20_07_sec.dir/srcs/ft_u.c.o"
+  "CMakeFiles/20_07_sec.dir/srcs/ft_s.c.o"
   "CMakeFiles/20_07_sec.dir/main.c.o"
   "20_07_sec.pdb"
   "20_07_sec"

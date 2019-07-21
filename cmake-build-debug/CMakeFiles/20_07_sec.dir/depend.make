@@ -323,6 +323,10 @@ CMakeFiles/20_07_sec.dir/srcs/ft_round.c.o: ../includes/ft_printf.h
 CMakeFiles/20_07_sec.dir/srcs/ft_round.c.o: ../libft/includes/libft.h
 CMakeFiles/20_07_sec.dir/srcs/ft_round.c.o: ../srcs/ft_round.c
 
+CMakeFiles/20_07_sec.dir/srcs/ft_s.c.o: ../includes/ft_printf.h
+CMakeFiles/20_07_sec.dir/srcs/ft_s.c.o: ../libft/includes/libft.h
+CMakeFiles/20_07_sec.dir/srcs/ft_s.c.o: ../srcs/ft_s.c
+
 CMakeFiles/20_07_sec.dir/srcs/ft_u.c.o: ../includes/ft_printf.h
 CMakeFiles/20_07_sec.dir/srcs/ft_u.c.o: ../libft/includes/libft.h
 CMakeFiles/20_07_sec.dir/srcs/ft_u.c.o: ../srcs/ft_u.c

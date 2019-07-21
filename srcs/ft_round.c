@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char    *ft_round(char *s, int a)
+char    *ft_round(char *s, size_t a)
 {
     int     i;
     int     k;

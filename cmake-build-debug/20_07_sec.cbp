@@ -381,6 +381,9 @@
 		<Unit filename="/Users/shunt/Desktop/my20/srcs/ft_round.c">
 			<Option target="20_07_sec"/>
 		</Unit>
+		<Unit filename="/Users/shunt/Desktop/my20/srcs/ft_s.c">
+			<Option target="20_07_sec"/>
+		</Unit>
 		<Unit filename="/Users/shunt/Desktop/my20/srcs/ft_u.c">
 			<Option target="20_07_sec"/>
 		</Unit>

@@ -2715,6 +2715,33 @@ srcs/ft_round.c.s:
 	$(MAKE) -f CMakeFiles/20_07_sec.dir/build.make CMakeFiles/20_07_sec.dir/srcs/ft_round.c.s
 .PHONY : srcs/ft_round.c.s
 
+srcs/ft_s.o: srcs/ft_s.c.o
+
+.PHONY : srcs/ft_s.o
+
+# target to build an object file
+srcs/ft_s.c.o:
+	$(MAKE) -f CMakeFiles/20_07_sec.dir/build.make CMakeFiles/20_07_sec.dir/srcs/ft_s.c.o
+.PHONY : srcs/ft_s.c.o
+
+srcs/ft_s.i: srcs/ft_s.c.i
+
+.PHONY : srcs/ft_s.i
+
+# target to preprocess a source file
+srcs/ft_s.c.i:
+	$(MAKE) -f CMakeFiles/20_07_sec.dir/build.make CMakeFiles/20_07_sec.dir/srcs/ft_s.c.i
+.PHONY : srcs/ft_s.c.i
+
+srcs/ft_s.s: srcs/ft_s.c.s
+
+.PHONY : srcs/ft_s.s
+
+# target to generate assembly for a file
+srcs/ft_s.c.s:
+	$(MAKE) -f CMakeFiles/20_07_sec.dir/build.make CMakeFiles/20_07_sec.dir/srcs/ft_s.c.s
+.PHONY : srcs/ft_s.c.s
+
 srcs/ft_u.o: srcs/ft_u.c.o
 
 .PHONY : srcs/ft_u.o
@@ -3525,6 +3552,9 @@ help:
 	@echo "... srcs/ft_round.o"
 	@echo "... srcs/ft_round.i"
 	@echo "... srcs/ft_round.s"
+	@echo "... srcs/ft_s.o"
+	@echo "... srcs/ft_s.i"
+	@echo "... srcs/ft_s.s"
 	@echo "... srcs/ft_u.o"
 	@echo "... srcs/ft_u.i"
 	@echo "... srcs/ft_u.s"

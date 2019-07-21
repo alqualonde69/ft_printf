@@ -124,4 +124,5 @@ add_executable(20_07_sec
         srcs/zrs.c
         srcs/chck_u.c
         srcs/ft_u.c
+        srcs/ft_s.c
         main.c)

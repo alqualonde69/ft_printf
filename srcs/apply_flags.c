@@ -107,7 +107,7 @@ int    ft_app_width(t_rd **read)
 						res[++b] = (*read)->mod[i];
 						++i;
 					}
-					while (res[++b])
+					while (++b < (*read)->width)
 						res[b] = ' ';
 					tmp = (*read)->mod;
 					(*read)->mod = res;
@@ -122,7 +122,7 @@ int    ft_app_width(t_rd **read)
 						res[++b] = (*read)->mod[i];
 					tmp = (*read)->mod;
 					(*read)->mod = res;
-					free((void *) tmp);
+					free((void *)tmp);
 				}
 				else /* Whitout flags */
 				{
@@ -133,7 +133,7 @@ int    ft_app_width(t_rd **read)
 						res[++b] = (*read)->mod[i];
 					tmp = (*read)->mod;
 					(*read)->mod = res;
-					free((void *) tmp);
+				    free((void *)tmp);
 				}
 
 			}
@@ -190,7 +190,7 @@ int    ft_app_fl(t_rd **read)
 //		;
 		if ((*read)->flag == 8) /* '#' */
 		{
-			if ((*read)->mod_smb == 'o')
+			if ((*read)->mod_smb == 'o' && !((*read)->mod[0] == '0' && !(*read)->mod[1]))
 			{
 				strlen = ft_strlen((*read)->mod);
 				if (!(res = (char *) malloc(sizeof(char) * (strlen + 2))))
@@ -207,7 +207,7 @@ int    ft_app_fl(t_rd **read)
 				free((void *) tmp);
 
 			}
-			if ((*read)->mod_smb == 'x')
+			if ((*read)->mod_smb == 'x' && !((*read)->mod[0] == '0' && !(*read)->mod[1]) && (*read)->mod[0])
 			{
 				b = 1;
 				strlen = ft_strlen((*read)->mod);
@@ -225,7 +225,7 @@ int    ft_app_fl(t_rd **read)
 				(*read)->mod = res;
 				free((void *) tmp);
 			}
-			if ((*read)->mod_smb == 'X')
+			if ((*read)->mod_smb == 'X' && !((*read)->mod[0] == '0' && !(*read)->mod[1]) && (*read)->mod[0])
 			{
 				b = 1;
 				strlen = ft_strlen((*read)->mod);
@@ -250,12 +250,15 @@ int    ft_app_fl(t_rd **read)
 
 int    ft_solver(t_rd **read, t_out *output)
 {
-	if (((*read)->mod_smb == 'd' || (*read)->mod_smb == 'i') &&
-		((*read)->prs))
+	if (((*read)->mod_smb == 'd' || (*read)->mod_smb == 'i')
+	    && ((*read)->prs))
 	{
 		if (!(ft_app_d_prs(read)))
 			return (0);
 	}
+	if ((*read)->mod_smb == 's' && ((*read)->prs))
+	    if ((*read)->prs < ft_strlen((*read)->mod))
+            (*read)->mod[(*read)->prs] = '\0';
 	if (!(ft_app_fl(read)))
 		return (0);
 	if (!(ft_app_width(read)))

@@ -69,8 +69,8 @@ void ft_reader(t_rd **read, va_list *ap, const char *format, t_out *out)
 	ft_chck_precision(read, format, &ap);
 	ft_chck_size(read, format/*, &ap*/);
 	ft_chck_mod(read, format, &ap, out);
-	if (((*read)->mod_smb == 'd' || (*read)->mod_smb == 'i') &&
-		(*read)->prs == 6 && (*read)->kostil != 1)
+	if (((*read)->mod_smb == 'd' || (*read)->mod_smb == 'i' ||
+	    (*read)->mod_smb == 's') && (*read)->prs == 6 && (*read)->kostil != 1)
 		(*read)->prs = 0;
 }
 

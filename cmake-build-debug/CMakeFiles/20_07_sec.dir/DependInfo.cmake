@@ -100,6 +100,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/shunt/Desktop/my20/srcs/ft_put_percent.c" "/Users/shunt/Desktop/my20/cmake-build-debug/CMakeFiles/20_07_sec.dir/srcs/ft_put_percent.c.o"
   "/Users/shunt/Desktop/my20/srcs/ft_rg.c" "/Users/shunt/Desktop/my20/cmake-build-debug/CMakeFiles/20_07_sec.dir/srcs/ft_rg.c.o"
   "/Users/shunt/Desktop/my20/srcs/ft_round.c" "/Users/shunt/Desktop/my20/cmake-build-debug/CMakeFiles/20_07_sec.dir/srcs/ft_round.c.o"
+  "/Users/shunt/Desktop/my20/srcs/ft_s.c" "/Users/shunt/Desktop/my20/cmake-build-debug/CMakeFiles/20_07_sec.dir/srcs/ft_s.c.o"
   "/Users/shunt/Desktop/my20/srcs/ft_u.c" "/Users/shunt/Desktop/my20/cmake-build-debug/CMakeFiles/20_07_sec.dir/srcs/ft_u.c.o"
   "/Users/shunt/Desktop/my20/srcs/int_p.c" "/Users/shunt/Desktop/my20/cmake-build-debug/CMakeFiles/20_07_sec.dir/srcs/int_p.c.o"
   "/Users/shunt/Desktop/my20/srcs/mantis.c" "/Users/shunt/Desktop/my20/cmake-build-debug/CMakeFiles/20_07_sec.dir/srcs/mantis.c.o"
