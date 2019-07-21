@@ -38,7 +38,7 @@ int   chck_nthng(const char *format, t_out *output, t_rd **read)
 	(*output).buf = ft_strjoin((*output).buf, res);
 	free((void *)res);
 	tmp2 ? free((void *)tmp2) : 0;
-	(*read)->smb_cnt--;
+	//(*read)->smb_cnt--;
 	format[(*read)->smb_cnt] == '\0' ? (*read)->smb_cnt-- : 0;
 	return (SUCCESS);
 }

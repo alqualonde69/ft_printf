@@ -36,6 +36,7 @@ char    *u_itoa_base(u_int64_t n, u_int64_t b, int c)
     if (!(s = (char *)malloc(sizeof(char) * (l + 1))))
         return (NULL);
     s[l] = '\0';
+    n == 0 ? s[0] = '0' : 0;
     while (n)
     {
         if (n % b < 10)
