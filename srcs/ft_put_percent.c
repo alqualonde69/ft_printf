@@ -23,24 +23,27 @@ int   chck_nthng(const char *format, t_out *output, t_rd **read)
 	i = 0;
 	b = -1;
 	tmp = (*read)->smb_cnt;
-	while (format[(*read)->smb_cnt] && format[(*read)->smb_cnt] != '%')
-	{
-		(*read)->smb_cnt++;
-		i++;
-	}
-	if (!(res = (char *)malloc(sizeof(char) * (i + 1))))
-		return (0);
-	res[i] = '\0';
-	tmp--;
-	while (++b < i)
-		res[b] = format[++tmp];
-	tmp2 = (*output).buf;
-	(*output).buf = ft_strjoin((*output).buf, res);
-	free((void *)res);
-	tmp2 ? free((void *)tmp2) : 0;
-	//(*read)->smb_cnt--;
-	format[(*read)->smb_cnt] == '\0' ? (*read)->smb_cnt-- : 0;
-	return (SUCCESS);
+    if ((format[(*read)->smb_cnt] >= 'A' && format[(*read)->smb_cnt] <= 'Z') ||
+        (format[(*read)->smb_cnt] >= 'a' && format[(*read)->smb_cnt] <= 'z'))
+    {
+        while (format[(*read)->smb_cnt] && format[(*read)->smb_cnt] != '%') {
+            (*read)->smb_cnt++;
+            i++;
+        }
+        if (!(res = (char *) malloc(sizeof(char) * (i + 1))))
+            return (0);
+        res[i] = '\0';
+        tmp--;
+        while (++b < i)
+            res[b] = format[++tmp];
+        tmp2 = (*output).buf;
+        (*output).buf = ft_strjoin((*output).buf, res);
+        free((void *) res);
+        tmp2 ? free((void *) tmp2) : 0;
+        //(*read)->smb_cnt--;
+        format[(*read)->smb_cnt] == '\0' ? (*read)->smb_cnt-- : 0;
+        return (SUCCESS);
+    }
 }
 
 int    ft_put_percent(const char *format, t_out *output, t_rd **rd)
@@ -53,7 +56,7 @@ int    ft_put_percent(const char *format, t_out *output, t_rd **rd)
 
 	i = 1;
 	b = 0;
-	(*rd)->smb_cnt += 2;
+	//(*rd)->smb_cnt += 2;
 	tmp = (*rd)->smb_cnt;
 	while (format[(*rd)->smb_cnt] && format[(*rd)->smb_cnt] != '%')
 	{

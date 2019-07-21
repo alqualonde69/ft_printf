@@ -53,6 +53,7 @@ char        *u_itoa(u_int64_t n)
     a = ft_order_u(n);
     if ((r = (char *)malloc(sizeof(char) * (a + 1))))
     {
+        r[a] = '\0';
         while (--a >= 0)
         {
             r[a] = (n % 10) + 48;
@@ -72,7 +73,7 @@ char        *s_itoa(int64_t n)
     if ((r = (char *)malloc(sizeof(char) * (a + 1))))
     {
         r[a] = '\0';
-        r[0] = '-';
+        r[0] = n == 0 ? '0' : '-';
         while (n)
         {
             r[--a] = ((n % 10) >= 0) ? (n % 10) + 48 : ((n % 10) * -1) + 48;

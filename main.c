@@ -14,12 +14,9 @@
 
 int		main()
 {
-    int a = printf("%u %u %u %u %u\n", 1, 100, 999, 42, 999988888);
+    int a = printf("%ld%ld", 0l, 42l);
     printf("%d\n", a);
-    int b = ft_printf("%u %u %u %u %u\n", 1, 100, 999, 42, 999988888);
-//    int a = printf("%% %d\n", 1);
-//    printf("%d\n", a);
-//    int b = ft_printf("%% %d\n", 1);
+    int b = ft_printf("%ld%ld", 0l, 42l);
     printf("%d\n", b);
 	return (0);
 }

@@ -52,7 +52,7 @@ int ft_pt_frst(const char *format, t_out *output, t_rd **rd)
 	(*output).buf = ft_strjoin((*output).buf, res);
 	free((void *)res);
 	tmp2 ? free((void *)tmp2) : 0;
-	//format[(*rd)->smb_cnt] == '\0' ? (*rd)->smb_cnt-- : 0;
+//	format[(*rd)->smb_cnt] == '\0' ? (*rd)->smb_cnt-- : 0;
 	if (format[(*rd)->smb_cnt] == '%' && format[(*rd)->smb_cnt + 1] == '%')
 	{
 		if (!(ft_put_percent(format, output, rd)))
@@ -99,9 +99,9 @@ int ft_printf(const char *format, ...)
 	if (!(p.read = (t_rd *)malloc(sizeof(t_rd))))
 		return (0);
 	p.read->strlen = ft_strlen(format);
-	p.read->smb_cnt = -1;
+	p.read->smb_cnt = 0;
 	p.read->prev = NULL;
-	while (format[++p.read->smb_cnt])
+	while (format[p.read->smb_cnt])
 	{
 		if (!(p.read->next = (t_rd *)malloc(sizeof(t_rd))))
 			return (0);
@@ -115,7 +115,7 @@ int ft_printf(const char *format, ...)
 		p.read->prev = tmp;
 		p.read->smb_cnt = p.read->prev->smb_cnt;
 		p.read->strlen = p.read->prev->strlen;
-
+        format[p.read->smb_cnt] ? ++p.read->smb_cnt : 0;
 	}
 	va_end(p.ap);
 	ft_out_cnt(&p.output);

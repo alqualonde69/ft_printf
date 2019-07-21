@@ -16,15 +16,15 @@ void    chck_u(t_rd **read, va_list **ap)
 {
     (*read)->mod_smb = 'u';
     if ((*read)->size == 0)
-        (*read)->mod = ft_u(va_arg(**ap, int));
+        (*read)->mod = ft_u(va_arg(**ap, unsigned int));
     else if ((*read)->size == 1)
-        (*read)->mod = ft_u(va_arg(**ap, long));
+        (*read)->mod = ft_u(va_arg(**ap, unsigned long));
     else if ((*read)->size == 2)
-        (*read)->mod = ft_u(va_arg(**ap, long long));
+        (*read)->mod = ft_u(va_arg(**ap, unsigned long long));
     else if ((*read)->size == 4)
-        (*read)->mod = ft_u((short)va_arg(**ap, int));
+        (*read)->mod = ft_u((unsigned short)va_arg(**ap, unsigned int));
     else if ((*read)->size == 8)
-        (*read)->mod = ft_u((char)va_arg(**ap, int));
+        (*read)->mod = ft_u((unsigned char)va_arg(**ap, unsigned int));
     else if ((*read)->size == 16)
         (*read)->mod = ft_u(va_arg(**ap, uintmax_t));
     else if ((*read)->size == 32 || (*read)->size == 64)

@@ -22,7 +22,7 @@ static void	ft_k(t_rd **read, const char *format, va_list **ap, t_out *out)
 		chck_x(read, ap);
 	else if (format[(*read)->smb_cnt] == 'X')
 		chck_xu(read, ap);
-	else if (format[(*read)->smb_cnt] == 'c')
+	else if (format[(*read)->smb_cnt] == 'c' || format[(*read)->smb_cnt] == 'C')
 		chck_c(read, ap);
 	else if (format[(*read)->smb_cnt] == 'u')
 	    chck_u(read, ap);
@@ -82,6 +82,10 @@ void    ft_chck_size(t_rd **read, const char *format/*, va_list **ap*/)
 			(*read)->size |= PTRDIFF_T;
 		else if (format[(*read)->smb_cnt] == 'L')
 			(*read)->size |= INT_64;
+        if ((*read)->size == 2 || (*read)->size == 8)
+            (*read)->smb_cnt += 2;
+        else if ((*read)->size)
+            ++(*read)->smb_cnt;
 	}
 }
 

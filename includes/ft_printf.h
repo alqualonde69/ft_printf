@@ -152,7 +152,7 @@ void    ft_out_cnt(t_out *output);
 
 char            *ft_d(int64_t n);
 char            *ft_u(u_int64_t n);
-char            *ft_c(char c);
+char            *ft_c(wchar_t c, int a);
 char            *ft_e(long double e, int a);
 char            *ft_ox(u_int64_t o, int a, int b);
 char            *ft_p(unsigned long long p);
