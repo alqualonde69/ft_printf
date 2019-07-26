@@ -14,9 +14,9 @@
 
 int		main()
 {
-    int a = printf("@moulitest: %c", 0);
-    printf("%d\n", a);
-    int b = ft_printf("@moulitest: %c", 0);
-    printf("%d\n", b);
+    int a = printf("%u", 0);
+    printf("\n%d\n", a);
+    int b = ft_printf("%u", 0);
+    printf("\n%d\n", b);
 	return (0);
 }

@@ -24,7 +24,16 @@ int 	ft_app_d_prs(t_rd **read)
 	b = -1;
 	if ((*read)->mod)
 	{
-		if ((*read)->prs > ft_strlen((*read)->mod))
+		if (!(*read)->prs && (*read)->mod[0] == '0' && !(*read)->mod[1] && (*read)->kostil == 1)
+		{
+			if (!(res = (char *)malloc(sizeof(char) * 1)))
+				return (0);
+			res[0] = '\0';
+			tmp = (*read)->mod;
+			(*read)->mod = res;
+			free((void *)tmp);
+		}
+		else if ((*read)->prs > ft_strlen((*read)->mod))
 		{
 			strlen = ft_strlen((*read)->mod);
 			if (!(res = (char *)malloc(sizeof(char)*((*read)->prs + 1))))
@@ -100,7 +109,7 @@ int    ft_app_width(t_rd **read)
 				if (!(res = (char *)malloc(sizeof(char)*((*read)->width) + 1)))
 					return (0);
 				res[(*read)->width] = '\0';
-				if ((*read)->flag == 1) /* if '-' */
+				if ((*read)->flag IS_MIN) /* if '-' */
 				{
 					while ((*read)->mod[i])
 					{
@@ -113,7 +122,7 @@ int    ft_app_width(t_rd **read)
 					(*read)->mod = res;
 					free((void *) tmp);
 				}
-				else if ((*read)->flag == 16) /* if '0' */
+				else if ((*read)->flag IS_ZE) /* if '0' */
 				{
 					while (++i != ((*read)->width - strlen + 1))
 						res[++b] = '0';
@@ -154,7 +163,7 @@ int    ft_app_fl(t_rd **read)
 	b = 0;
 	if ((*read)->mod)
 	{
-		if ((*read)->flag == 2 && (*read)->mod[0] != '-')
+		if ((*read)->flag IS_PL && (*read)->mod[0] != '-' && (*read)->mod_smb != 'u') /* '+' */
 		{
 			strlen = ft_strlen((*read)->mod);
 			if (!(res = (char *) malloc(sizeof(char) * (strlen + 2))))
@@ -170,7 +179,7 @@ int    ft_app_fl(t_rd **read)
 			(*read)->mod = res;
 			free((void *) tmp);
 		}
-		if ((*read)->flag == 4 && (*read)->mod[0] != '-') /* ' ' flag */
+		if ((*read)->flag IS_SP && (*read)->mod[0] != '-' && (*read)->mod_smb != 'u') /* ' ' */
 		{
 			strlen = ft_strlen((*read)->mod);
 			if (!(res = (char *) malloc(sizeof(char) * (strlen + 2))))
@@ -186,9 +195,7 @@ int    ft_app_fl(t_rd **read)
 			(*read)->mod = res;
 			free((void *) tmp);
 		}
-//	вместо знака у положит чисел (если есть ширина, то не выводится)
-//		;
-		if ((*read)->flag == 8) /* '#' */
+		if ((*read)->flag IS_O) /* '#' */
 		{
 			if ((*read)->mod_smb == 'o' && !((*read)->mod[0] == '0' && !(*read)->mod[1]))
 			{
@@ -207,7 +214,8 @@ int    ft_app_fl(t_rd **read)
 				free((void *) tmp);
 
 			}
-			if ((*read)->mod_smb == 'x' && !((*read)->mod[0] == '0' && !(*read)->mod[1]) && (*read)->mod[0])
+			if ((*read)->mod_smb == 'x' && !((*read)->mod[0] == '0'
+				&& !(*read)->mod[1]) && (*read)->mod[0])
 			{
 				b = 1;
 				strlen = ft_strlen((*read)->mod);
@@ -225,7 +233,8 @@ int    ft_app_fl(t_rd **read)
 				(*read)->mod = res;
 				free((void *) tmp);
 			}
-			if ((*read)->mod_smb == 'X' && !((*read)->mod[0] == '0' && !(*read)->mod[1]) && (*read)->mod[0])
+			if ((*read)->mod_smb == 'X' && !((*read)->mod[0] == '0'
+				&& !(*read)->mod[1]) && (*read)->mod[0])
 			{
 				b = 1;
 				strlen = ft_strlen((*read)->mod);
@@ -250,8 +259,11 @@ int    ft_app_fl(t_rd **read)
 
 int    ft_solver(t_rd **read, t_out *output)
 {
-	if (((*read)->mod_smb == 'd' || (*read)->mod_smb == 'i')
-	    && ((*read)->prs))
+//	(*read)->sign = 0; /* Positive Number */
+//	if ((*read)->mod[0] == '-')
+//		(*read)->sign = 1; /* Negative Number */
+	if ((((*read)->mod_smb == 'd' || (*read)->mod_smb == 'i' || (*read)->mod_smb == 'u')
+	    && ((*read)->prs)) || (!(*read)->prs && (*read)->mod[0] == '0' && !(*read)->mod[1]))
 	{
 		if (!(ft_app_d_prs(read)))
 			return (0);

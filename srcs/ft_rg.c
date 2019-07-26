@@ -31,7 +31,7 @@ char    *ft_rg(char *s, int a, unsigned short int d)
             ++k;
     if (t[i])
         t[i] == '.' ? rndg_z(t, i, d) : rndg(t, i);
-    d != 8 ? wzrs(&t) : 0;
+	(d IS_O) ? 0 : wzrs(&t);
     s_str(&s, &t, &c);
     return (s);
 }

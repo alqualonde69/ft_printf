@@ -12,17 +12,44 @@
 
 #include "ft_printf.h"
 
-char    *ft_ox(u_int64_t o, int a, int b, size_t prs)
+char *ft_ro(char **s, size_t prs, int l)
+{
+	char *r;
+	int i;
+	int j;
+
+	if ((*s)[0] == '0' && !(*s)[1] && !prs)
+	{
+
+		if (!(r = (char *)malloc(sizeof(char) * 1)))
+			return (NULL);
+		r[0] = '\0';
+		return (r);
+	}
+	if (!(r = (char *)malloc(sizeof(char) * (prs + 1))))
+		return (NULL);
+	r[prs] = '\0';
+	i = -1;
+	while (++i < (int)(prs - l))
+		r[i] = '0';
+	j = -1;
+	while ((*s)[++j])
+		r[i++] = (*s)[j];
+	free(*s);
+	return (r);
+}
+
+char    *ft_ox(u_int64_t o, int a, int b)
 {
 	char *s;
 
-    if (!o && !prs)
-    {
-        if (!(s = (char *)malloc(sizeof(char))))
-            return (NULL);
-        s[0] = '\0';
-        return (s);
-    }
+//    if (!o)
+//    {
+//        if (!(s = (char *)malloc(sizeof(char))))
+//            return (NULL);
+//        s[0] = '\0';
+//        return (s);
+//    }
 	if (a == 8)
 	{
 	    if (!(s = u_itoa_base(o, 8, 1)))

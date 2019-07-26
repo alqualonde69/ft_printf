@@ -36,6 +36,12 @@
 # define F_OCT           (1u << 3u)		/* '#' */  /*    8 */
 # define F_ZERO          (1u << 4u)		/* '0' */  /*   16 */
 
+# define IS_MIN         & F_MINUS       /* '-' */
+# define IS_PL          & F_PLUS        /* '+' */
+# define IS_SP          & F_SPACE       /* ' ' */
+# define IS_O           & F_OCT         /* '#' */
+# define IS_ZE          & F_ZERO        /* '0' */
+
 /*
 **  SIZE (MASKS)
 */
@@ -58,6 +64,7 @@ typedef struct			s_rd
 	wchar_t 			*mod2;
 	char				*mod;       /* String */
 	char				mod_smb;    /* Symbol of Format */
+//	int                 sign;       /* Sign */
 	unsigned short int	flag;       /* Flags */
 	unsigned short int	size;       /* Size of Output */
 	size_t      		smb_cnt;    /* Counter for Checking */
@@ -106,7 +113,7 @@ void		ft_chck_size(t_rd **read, const char *format/*, va_list **ap*/);
 void		ft_chck_precision(t_rd **read, const char *format, va_list **ap);
 void		ft_chck_wdth(t_rd **read, const char *format, va_list **ap);
 void		ft_rd(t_rd **rd, va_list *ap, const char *ft, t_out **out);
-int         ft_put_percent(const char *format, t_out *output, t_rd **rd);
+int         ft_put_percent(t_rd **read);
 void		chck_b(t_rd **read, va_list **ap);
 void		chck_c(t_rd **read, va_list **ap);
 void		chck_di(t_rd **read, va_list **ap, int a);
@@ -154,7 +161,7 @@ char            *ft_d(int64_t n);
 char            *ft_u(u_int64_t n);
 char            *ft_c(wchar_t c, int a);
 char            *ft_e(long double e, int a);
-char            *ft_ox(u_int64_t o, int a, int b, size_t prs);
+char            *ft_ox(u_int64_t o, int a, int b);
 char            *ft_p(unsigned long long p);
 char            *ft_fld(long double f, int c);
 char            *ft_g(long double g, int a, size_t b, unsigned short int c);
@@ -187,5 +194,6 @@ char            *ft_rg(char *s, int a, unsigned short int d);
 char            *s_itoa(int64_t n);
 char            *u_itoa(u_int64_t n);
 void            wzrs(char **t);
+char            *ft_ro(char **s, size_t prs, int l);
 
 #endif
