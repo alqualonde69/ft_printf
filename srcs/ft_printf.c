@@ -43,6 +43,7 @@ int ft_pt_frst(const char *format, t_out *output, t_rd **rd)
 	if (!(res = (char *)malloc(sizeof(char) * (i + 1))))
 		return (0);
 	res[i] = '\0';
+	(*output).cnt += i;
 	tmp--;
 	while (++b < i)
 		res[b] = format[++tmp];
@@ -58,6 +59,7 @@ int ft_pt_frst(const char *format, t_out *output, t_rd **rd)
 
 void ft_reader(t_rd **read, va_list *ap, const char *format, t_out *out)
 {
+	format[(*read)->smb_cnt] == '%' ? ++(*read)->smb_cnt : 0;
 	ft_chck_flags(read, format);
 	ft_chck_wdth(read, format, &ap);
 	ft_chck_precision(read, format, &ap);
@@ -80,6 +82,15 @@ void ft_free_lists(t_rd **read)
 	}
 }
 
+int		ft_putbuf(char *s, int b)
+{
+	int		i;
+
+	i = -1;
+	while (++i < b)
+		write(1, &s[i], 1);
+}
+
 int ft_printf(const char *format, ...)
 {
 	t_printf	p;
@@ -87,7 +98,8 @@ int ft_printf(const char *format, ...)
 
 	if (!(*format))
 		return (0);
-	p.output.output_cnt = 0;
+//	p.output.output_cnt = 0;
+	p.output.cnt = 0;
 	va_start (p.ap, format);
 	p.output.buf = NULL;
 	if (!(p.read = (t_rd *)malloc(sizeof(t_rd))))
@@ -112,8 +124,9 @@ int ft_printf(const char *format, ...)
         format[p.read->smb_cnt] ? ++p.read->smb_cnt : 0;
 	}
 	va_end(p.ap);
-	ft_out_cnt(&p.output);
-	ft_putstr(p.output.buf);
+//	ft_out_cnt(&p.output);
+	ft_putbuf(p.output.buf, p.output.cnt);
 	ft_free_lists(&p.read);
-	return (p.output.output_cnt);
+//	return (p.output.output_cnt);
+	return (p.output.cnt);
 }

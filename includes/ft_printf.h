@@ -64,7 +64,7 @@ typedef struct			s_rd
 	wchar_t 			*mod2;
 	char				*mod;       /* String */
 	char				mod_smb;    /* Symbol of Format */
-//	int                 sign;       /* Sign */
+	int                 sign;       /* Sign */
 	unsigned short int	flag;       /* Flags */
 	unsigned short int	size;       /* Size of Output */
 	size_t      		smb_cnt;    /* Counter for Checking */
@@ -74,7 +74,6 @@ typedef struct			s_rd
 	size_t      		strlen;     /* Size Of String */
 	struct s_rd			*next;
 	struct s_rd			*prev;
-
 }						t_rd;
 
 typedef struct			s_out
@@ -113,7 +112,7 @@ void		ft_chck_size(t_rd **read, const char *format/*, va_list **ap*/);
 void		ft_chck_precision(t_rd **read, const char *format, va_list **ap);
 void		ft_chck_wdth(t_rd **read, const char *format, va_list **ap);
 void		ft_rd(t_rd **rd, va_list *ap, const char *ft, t_out **out);
-int         ft_put_percent(t_rd **read);
+int         ft_put_percent(t_rd **read, const char *format);
 void		chck_b(t_rd **read, va_list **ap);
 void		chck_c(t_rd **read, va_list **ap);
 void		chck_di(t_rd **read, va_list **ap, int a);
@@ -132,6 +131,7 @@ int         chck_nthng(const char *format, t_out *output, t_rd **rd);
 **  MAIN
 */
 
+int			ft_putbuf(char *s, int b);
 void		ft_free_lists(t_rd **read);
 int			ft_printf(const char *format, ...);
 int			ft_pt_frst(const char *format, t_out *output, t_rd **rd);
@@ -146,6 +146,7 @@ int 		ft_app_d_prs(t_rd **read);
 int			ft_app_width(t_rd **read);
 int			ft_app_size(t_rd **read, t_out **output);
 int 		ft_put_out(t_rd **read, t_out **output);
+int		 	ft_add_pl(t_rd **read);
 
 /*
 **  OUTPUT

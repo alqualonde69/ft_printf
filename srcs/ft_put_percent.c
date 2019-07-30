@@ -22,6 +22,10 @@ int   chck_nthng(const char *format, t_out *output, t_rd **read)
 
 	i = 0;
 	b = -1;
+	while (format[(*read)->smb_cnt] == 'l' || format[(*read)->smb_cnt] == 'h' ||
+		format[(*read)->smb_cnt] == 'j' || format[(*read)->smb_cnt] == 'z' ||
+			format[(*read)->smb_cnt] == 'L' || format[(*read)->smb_cnt] == 't')
+		++(*read)->smb_cnt;
 	tmp = (*read)->smb_cnt;
     if ((format[(*read)->smb_cnt] >= 'A' && format[(*read)->smb_cnt] <= 'Z') ||
         (format[(*read)->smb_cnt] >= 'a' && format[(*read)->smb_cnt] <= 'z'))
@@ -33,6 +37,7 @@ int   chck_nthng(const char *format, t_out *output, t_rd **read)
         if (!(res = (char *) malloc(sizeof(char) * (i + 1))))
             return (0);
         res[i] = '\0';
+		(*output).cnt += i;
         tmp--;
         while (++b < i)
             res[b] = format[++tmp];
@@ -40,15 +45,18 @@ int   chck_nthng(const char *format, t_out *output, t_rd **read)
         (*output).buf = ft_strjoin((*output).buf, res);
         free((void *) res);
         tmp2 ? free((void *) tmp2) : 0;
-        //(*read)->smb_cnt--;
-        format[(*read)->smb_cnt] == '\0' ? (*read)->smb_cnt-- : 0;
+        --(*read)->smb_cnt;
         return (SUCCESS);
     }
 }
 
-int    ft_put_percent(t_rd **read)
+int    ft_put_percent(t_rd **read, const char *format)
 {
-	(*read)->mod = (char *)malloc(sizeof(char) * 2);
-	(*read)->mod[0] = '%';
-	(*read)->mod[1] = '\0';
+//	if (!format[(*read)->smb_cnt + 1] || format[(*read)->smb_cnt + 1] == '%')
+//	{
+		(*read)->mod = (char *) malloc(sizeof(char) * 2);
+		(*read)->mod[0] = '%';
+		(*read)->mod[1] = '\0';
+		(*read)->mod_smb = '%';
+//	}
 }
