@@ -14,9 +14,9 @@
 
 int		main()
 {
-    int a = printf("%ll#x", 9223372036854775807);
+    int a = printf("null %c and text", 0);
     printf("\n%d\n", a);
-	int b = ft_printf("%ll#x", 9223372036854775807);
+	int b = ft_printf("null %c and text", 0);
 	printf("\n%d\n", b);
 	return (0);
 }

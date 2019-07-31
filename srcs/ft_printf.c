@@ -12,17 +12,17 @@
 
 #include "ft_printf.h"
 
-void    ft_out_cnt(t_out *output)
-{
-	int i;
-	int b;
-
-	b = 0;
-	i = -1;
-	while ((output)->buf[++i])
-		++b;
-	output->output_cnt = b;
-}
+//void    ft_out_cnt(t_out *output)
+//{
+//	int i;
+//	int b;
+//
+//	b = 0;
+//	i = -1;
+//	while ((output)->buf[++i])
+//		++b;
+//	output->output_cnt = b;
+//}
 
 int ft_pt_frst(const char *format, t_out *output, t_rd **rd)
 {
@@ -59,6 +59,7 @@ int ft_pt_frst(const char *format, t_out *output, t_rd **rd)
 
 void ft_reader(t_rd **read, va_list *ap, const char *format, t_out *out)
 {
+	(*read)->zero = 0;
 	format[(*read)->smb_cnt] == '%' ? ++(*read)->smb_cnt : 0;
 	ft_chck_flags(read, format);
 	ft_chck_wdth(read, format, &ap);

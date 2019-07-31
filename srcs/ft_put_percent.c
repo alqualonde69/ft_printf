@@ -37,15 +37,15 @@ int   chck_nthng(const char *format, t_out *output, t_rd **read)
         if (!(res = (char *) malloc(sizeof(char) * (i + 1))))
             return (0);
         res[i] = '\0';
-		(*output).cnt += i;
         tmp--;
         while (++b < i)
             res[b] = format[++tmp];
         tmp2 = (*output).buf;
-        (*output).buf = ft_strjoin((*output).buf, res);
+        (*output).buf = ft_bufjoin((*output).buf, res, (*output).cnt, i);
         free((void *) res);
         tmp2 ? free((void *) tmp2) : 0;
         --(*read)->smb_cnt;
+		(*output).cnt += i;
         return (SUCCESS);
     }
 }

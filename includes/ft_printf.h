@@ -74,13 +74,14 @@ typedef struct			s_rd
 	size_t      		strlen;     /* Size Of String */
 	struct s_rd			*next;
 	struct s_rd			*prev;
+	char 				zero;
 }						t_rd;
 
 typedef struct			s_out
 {
 	char				*buf;
 	int					cnt;         /* Array Counter */
-	unsigned int		output_cnt;  /* Symbols Sum */
+//	unsigned int		output_cnt;  /* Symbols Sum */
 
 }						t_out;
 
@@ -132,6 +133,7 @@ int         chck_nthng(const char *format, t_out *output, t_rd **rd);
 */
 
 int			ft_putbuf(char *s, int b);
+char		*ft_bufjoin(char *s1, char *s2, int b1, int b2);
 void		ft_free_lists(t_rd **read);
 int			ft_printf(const char *format, ...);
 int			ft_pt_frst(const char *format, t_out *output, t_rd **rd);
@@ -160,7 +162,7 @@ void    ft_out_cnt(t_out *output);
 
 char            *ft_d(int64_t n);
 char            *ft_u(u_int64_t n);
-char            *ft_c(wchar_t c, int a);
+char            *ft_c(wchar_t c, int a, t_rd **read);
 char            *ft_e(long double e, int a);
 char            *ft_ox(u_int64_t o, int a, int b);
 char            *ft_p(unsigned long long p);

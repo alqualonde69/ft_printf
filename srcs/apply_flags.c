@@ -74,6 +74,26 @@ int 	ft_app_d_prs(t_rd **read)
 	return (1);
 }
 
+char 	*ft_bufjoin(char *s1, char *s2, int b1, int b2)
+{
+	char	*p;
+	int		i;
+	int		k;
+
+	i = 0;
+	k = -1;
+	if (!s1 || !s2)
+		return (0);
+	if (!(p = (char *)malloc(sizeof(char) * (b1 + b2 + 1))))
+		return (NULL);
+	while (i < b1)
+		p[i++] = *s1++;
+	while (++k < b2)
+		p[i++] = *s2++;
+	p[i++] = '\0';
+	return (p);
+}
+
 int 	ft_put_out(t_rd **read, t_out **output)
 {
 	unsigned long	i;
@@ -88,18 +108,18 @@ int 	ft_put_out(t_rd **read, t_out **output)
 	b = -1;
 	if ((*read)->mod)
 	{
-		strlen = ft_strlen((*read)->mod);
+		strlen = (*read)->zero ? ft_strlen((*read)->mod) + 1 : ft_strlen((*read)->mod);
 		if (!(res = (char *) malloc(sizeof(char) * (strlen + 1))))
 			return (0);
 		res[strlen] = '\0';
-		(*output)->cnt += strlen;
 		while ((*read)->mod[i])
 		{
 			res[++b] = (*read)->mod[i];
 			++i;
 		}
 		tmp = (*output)->buf;
-		(*output)->buf = ft_strjoin((*output)->buf, res);
+		(*output)->buf = ft_bufjoin((*output)->buf, res, (*output)->cnt, strlen);
+		(*output)->cnt += strlen;
 		free((void *)res);
 		free((void *)tmp);
 	}
@@ -121,7 +141,7 @@ int    ft_app_width(t_rd **read)
 	{
 		if ((*read)->width)
 		{
-			strlen = ft_strlen((*read)->mod);
+			strlen = (*read)->zero ? ft_strlen((*read)->mod) + 1 : ft_strlen((*read)->mod);
 			if ((*read)->width > strlen)
 			{
 				(*read)->sign = 1;
