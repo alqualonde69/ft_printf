@@ -14,9 +14,9 @@
 
 int		main()
 {
-    int a = printf("null %c and text", 0);
+    int a = printf("%f", 0.000039);
     printf("\n%d\n", a);
-	int b = ft_printf("null %c and text", 0);
+	int b = ft_printf("%f", 0.000039);
 	printf("\n%d\n", b);
 	return (0);
 }

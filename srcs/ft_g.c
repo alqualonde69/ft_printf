@@ -24,7 +24,7 @@ char    *ft_g(long double g, int a, size_t b, unsigned short int c)
     while (f[++i] && f[i] != '.')
         ;
     i = f[0] == '-' ? --i : i;
-    if (b < i)
+    if ((int)b < i)
     {
         free(f);
         return (ft_rg(e, b, c));

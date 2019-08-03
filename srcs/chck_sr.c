@@ -15,12 +15,13 @@
 void	chck_sr(t_rd **read, va_list **ap, int a)
 {
 	(*read)->mod_smb = a ? 's' : 'r';
+	(*read)->prs < 0 ? (*read)->prs = 6 : 0;
 	if ((*read)->size == 1 || !a)
     {
         (*read)->mod2 = (va_arg(**ap, wchar_t *));
         if (!(*read)->mod2)
         {
-            (*read)->mod2 = (char *)malloc(sizeof(char) * 7);
+            (*read)->mod2 = (wchar_t *)malloc(sizeof(wchar_t) * 7);
             (*read)->mod2[0] = '(';
             (*read)->mod2[1] = 'n';
             (*read)->mod2[2] = 'u';

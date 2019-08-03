@@ -15,6 +15,8 @@
 char    *ft_c(wchar_t c, int a, t_rd **read)
 {
     char    *s;
+
+    s = NULL;
 	(*read)->zero = !c ? 1 : 0;
     if (!a)
     {
@@ -25,10 +27,10 @@ char    *ft_c(wchar_t c, int a, t_rd **read)
     }
     else
     {
-        if (!(s = (wchar_t *)malloc(sizeof(wchar_t) * 2)))
-            return (NULL);
-        ft_memcpy(s, &c, 4);
-        s[1] = '\0';
+//        if (!(s = (wchar_t *)malloc(sizeof(wchar_t) * 2)))
+//            return (NULL);
+//        ft_memcpy(s, &c, 4);
+//        s[1] = '\0';
     }
     return (s);
 }

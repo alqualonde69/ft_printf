@@ -6,7 +6,7 @@
 #    By: huller <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/05 20:42:10 by huller            #+#    #+#              #
-#    Updated: 2019/07/12 22:59:27 by shunt            ###   ########.fr        #
+#    Updated: 2019/08/02 16:21:01 by huller           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,12 +60,14 @@ all:                $(NAME)
 $(NAME):		$(LIB_NAME)	$(OBJ)
 	@cp $(LIB) $(NAME)
 	@ar r $(NAME) $(OBJ)
+	@echo -n 🌝
 	@echo "$(GRN)\nLinking [ $(NAME) ] SUCCESS$(RES)"
 
 $(OBJ_PATH)%.o:		$(SRC_PATH)%.c $(INC) $(LIB_INC)
 	@mkdir -p $(OBJ_PATH)
 	@gcc -Wall -Wextra -Wextra \
 		-I $(INC_PATH) -I $(LIB_INC_PATH) -o $@ -c $<
+	@echo -n 🌑
 
 # LIBFT
 $(LIB_NAME):

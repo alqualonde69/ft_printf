@@ -16,15 +16,17 @@ void    str_ml(char *s1, int m)
 {
     char    *tmp;
     int     i;
+    int     l;
 
-    if (!(tmp = (char *)malloc(sizeof(char) * (strlen(s1) + 1))))
+    l = ft_strlen(s1);
+    if (!(tmp = (char *)malloc(sizeof(char) * (l + 1))))
         return ;
     i = -1;
     while (s1[++i])
         tmp[i] = s1[i];
     tmp[i] = '\0';
     if (m == 0)
-        memset(s1, '0', strlen(s1));
+        ft_memset(s1, '0', l);
     while (--m > 0)
         str_ad(s1, tmp);
 }

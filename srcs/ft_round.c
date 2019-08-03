@@ -20,7 +20,7 @@ char    *ft_round(char *s, size_t a)
     char    *c;
 
     c = NULL;
-    k = strlen(s);
+    k = ft_strlen(s);
     i = t_str(s, &t);
     if (k != i)
         c_str(s, &c, i, k);
@@ -29,7 +29,7 @@ char    *ft_round(char *s, size_t a)
         k = i;
         while (t[--i] != '.')
             ;
-        if (k - i - 1 < a)
+        if (k - i - 1 < (int)a)
             zrs(t, a, i);
         else
             a ? rnd(t, a, i) : rnd_z(t, i);

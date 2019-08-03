@@ -23,9 +23,9 @@ void    rnd(char *s, int a, int i)
              (s[i + a + 1] == '5' && s[i + a] % 2))
     {
         s[i + a + 1] = '\0';
-        l = strlen(s);
-        t = (char *) malloc(sizeof(char) * (l + 1));
-        memset(t, '0', l);
+        l = ft_strlen(s);
+        t = (char *)malloc(sizeof(char) * (l + 1));
+        ft_memset(t, '0', l);
         t[l] = '\0';
         t[l - 1] = '1';
         s = str_ad(s, t);

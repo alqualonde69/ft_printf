@@ -52,7 +52,7 @@ char     *ft_e(long double e, int a)
             ++i;
         k = (s[0] == '-') ? (i - 2) : (i - 1);
     }
-    l = strlen(s) + ft_len(k);
+    l = ft_strlen(s) + ft_len(k);
     r = (char *)malloc(sizeof(char) * (l + 1));
     r[l] = '\0';
     i = 0;

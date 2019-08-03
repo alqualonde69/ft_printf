@@ -6,7 +6,7 @@
 #    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 18:14:41 by doberyn           #+#    #+#              #
-#    Updated: 2019/07/20 22:13:32 by huller           ###   ########.fr        #
+#    Updated: 2019/08/02 16:16:10 by huller           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INC = $(addprefix -I, $(INC_PATH))
 
-SRC_NAME = ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
+SRC_NAME = ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memset.c \
 		   ft_memchr.c ft_memcmp.c ft_strlen.c ft_strdup.c ft_strcpy.c \
 		   ft_strncpy.c ft_strcat.c ft_strncat.c ft_strlcat.c ft_strchr.c \
 		   ft_strrchr.c ft_strstr.c ft_strnstr.c ft_strcmp.c ft_strncmp.c \
@@ -52,10 +52,10 @@ all: $(NAME)
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(OBJ_PATH)
 	@gcc -Wall -Werror -Wextra $(INC) -o $@ -c $<
-	@echo -n =
+	@echo -n 🌧 
 
 $(NAME): $(OBJ)
-	@echo -n 8
+	@echo -n 🌈
 	@echo "\n$(YELLOW)LIBFT READY!"
 	@ar -rc $(NAME) $?
 	@ranlib $(NAME)

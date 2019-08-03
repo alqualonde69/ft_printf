@@ -19,7 +19,7 @@ char  *pw_to_str(int a, int b)
     int tmp = a;
     if (!(s = (char *)malloc(sizeof(char) * 5001)))
         return (NULL);
-    memset(s, '0', 5000);
+    ft_memset(s, '0', 5000);
     s[5000] = '\0';
     if (b == 0)
     {

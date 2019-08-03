@@ -22,12 +22,19 @@ int 	ft_app_d_prs(t_rd **read)
 
 	i = 0;
 	b = -1;
-	if ((*read)->mod)
+	if ((*read)->mod[0] == '0' && !(*read)->mod[1] && (*read)->kostil == 3)
+		(*read)->mod[0] = '\0';
+	else if ((*read)->mod_smb == 'p' && (*read)->mod[2] == '0' &&
+		!(*read)->mod[3] && (*read)->kostil == 3)
+		(*read)->mod[2] = '\0';
+	else if ((*read)->mod)
 	{
 		strlen = (*read)->mod[0] == '-' ? ft_strlen((*read)->mod) - 1 :
 				ft_strlen((*read)->mod);
+		if ((*read)->mod_smb == 'p')
+			strlen -= 2;
 		if (!(*read)->prs && (*read)->mod[0] == '0' && !(*read)->mod[1] &&
-			(*read)->kostil == 1)
+			(*read)->kostil == 1 && (*read)->mod_smb != 'p')
 		{
 			if (!(res = (char *)malloc(sizeof(char) * 1)))
 				return (0);
@@ -36,13 +43,28 @@ int 	ft_app_d_prs(t_rd **read)
 			(*read)->mod = res;
 			free((void *)tmp);
 		}
-		else if ((*read)->prs > strlen)
+		else if ((*read)->prs > (long)strlen)
 		{
-			if (!(res = (char *)malloc(sizeof(char)*((*read)->prs + 1))))
-				return (0);
-			res[(*read)->prs] = '\0';
-			if ((*read)->mod[0] == '-')
+
+			if ((*read)->mod_smb == 'p')
 			{
+				if (!(res = (char *)malloc(sizeof(char) * ((*read)->prs + 3))))
+					return (0);
+				res[(*read)->prs + 2] = '\0';
+				res[0] = '0';
+				res[1] = 'x';
+				b+=2;
+				while (i != ((*read)->prs - strlen - 2))
+				{
+					res[++b] = '0';
+					++i;
+				}
+			}
+			else if ((*read)->mod[0] == '-')
+			{
+				if (!(res = (char *)malloc(sizeof(char)*((*read)->prs + 2))))
+					return (0);
+				res[(*read)->prs + 1] = '\0';
 				res[0] = '-';
 				++b;
 				while (i != ((*read)->prs - strlen - 1))
@@ -53,6 +75,9 @@ int 	ft_app_d_prs(t_rd **read)
 			}
 			else
 			{
+				if (!(res = (char *)malloc(sizeof(char)*((*read)->prs + 1))))
+					return (0);
+				res[(*read)->prs] = '\0';
 				while (i != ((*read)->prs - strlen))
 				{
 					res[++b] = '0';
@@ -61,6 +86,7 @@ int 	ft_app_d_prs(t_rd **read)
 			}
 			i = 0;
 			(*read)->mod[0] == '-' ? (*read)->mod[0] = '0' : 0;
+			(*read)->mod_smb == 'p' ? (*read)->mod[1] = '0' : 0;
 			while ((*read)->mod[i])
 			{
 				res[++b] = (*read)->mod[i];
@@ -94,33 +120,22 @@ char 	*ft_bufjoin(char *s1, char *s2, int b1, int b2)
 	return (p);
 }
 
-int 	ft_put_out(t_rd **read, t_out **output)
+int ft_put_out(t_rd **read, t_out **output)
 {
-	unsigned long	i;
-	int 	        b;
-	unsigned long 	strlen;
-	char 	        *res;
-	char	        *tmp;
+	unsigned long i;
+	int b;
+	unsigned long strlen;
+	char *tmp;
 
 	i = 0;
 	b = -1;
-	b = -1;
-	b = -1;
 	if ((*read)->mod)
 	{
-		strlen = (*read)->zero ? ft_strlen((*read)->mod) + 1 : ft_strlen((*read)->mod);
-		if (!(res = (char *) malloc(sizeof(char) * (strlen + 1))))
-			return (0);
-		res[strlen] = '\0';
-		while ((*read)->mod[i])
-		{
-			res[++b] = (*read)->mod[i];
-			++i;
-		}
+		strlen = ft_strlen((*read)->mod) + (*read)->zero;
 		tmp = (*output)->buf;
-		(*output)->buf = ft_bufjoin((*output)->buf, res, (*output)->cnt, strlen);
+		(*output)->buf = ft_bufjoin((*output)->buf, (*read)->mod,
+		                            (*output)->cnt, strlen);
 		(*output)->cnt += strlen;
-		free((void *)res);
 		free((void *)tmp);
 	}
 	return (SUCCESS);
@@ -141,8 +156,14 @@ int    ft_app_width(t_rd **read)
 	{
 		if ((*read)->width)
 		{
-			strlen = (*read)->zero ? ft_strlen((*read)->mod) + 1 : ft_strlen((*read)->mod);
-			if ((*read)->width > strlen)
+			strlen = ft_strlen((*read)->mod) + (*read)->zero;
+//			if ((*read)->flag IS_PL && ((*read)->mod_smb == 'd' ||
+//				(*read)->mod_smb == 'i' || (*read)->mod_smb == 'f' ||
+//				(*read)->mod_smb == 'F' || (*read)->mod_smb == 'e' ||
+//				(*read)->mod_smb == 'E' || (*read)->mod_smb == 'g' ||
+//				(*read)->mod_smb == 'G'))
+//				++strlen;
+			if ((*read)->width > (long)strlen)
 			{
 				(*read)->sign = 1;
 				if (!(res = (char *)malloc(sizeof(char)*((*read)->width) + 1)))
@@ -150,25 +171,26 @@ int    ft_app_width(t_rd **read)
 				res[(*read)->width] = '\0';
 				if ((*read)->flag IS_MIN) /* if '-' */
 				{
-					if (((*read)->mod_smb == 'x' || (*read)->mod_smb == 'X') &&
-							(*read)->flag IS_O)
-					{
-						b += 2;
-						res[0] = ' ';
-						res[1] = ' ';
-					}
-					else if (((*read)->mod_smb == 'o' && (*read)->flag IS_O))
-					{
-						b += 1;
-						res[0] = ' ';
-					}
-					while ((*read)->mod[i])
+//					if (((*read)->mod_smb == 'x' || (*read)->mod_smb == 'X') &&
+//							(*read)->flag IS_O)
+//					{
+//						b += 2;
+//						res[0] = ' ';
+//						res[1] = ' ';
+//					}
+//					if (((*read)->mod_smb == 'o' && (*read)->flag IS_O))
+//					{
+//						b += 1;
+//						res[0] = ' ';
+//					}
+					while (i < strlen)
 					{
 						res[++b] = (*read)->mod[i];
 						++i;
 					}
 					while (++b < (*read)->width)
 						res[b] = ' ';
+					(*read)->zero ? (*read)->zero = (*read)->width : 0;
 					tmp = (*read)->mod;
 					(*read)->mod = res;
 					free((void *) tmp);
@@ -184,9 +206,22 @@ int    ft_app_width(t_rd **read)
 						res[0] = '-';
 						++b;
 					}
+					else if (((*read)->mod_smb == 'x' ||
+						(*read)->mod_smb == 'X') && strlen > 2 &&
+						(*read)->mod[0] == '0' && ((*read)->mod[1] == 'x' ||
+						(*read)->mod[1] == 'X'))
+					{
+						res[0] = (*read)->mod[0];
+						res[1] = (*read)->mod[1];
+						b += 2;
+						strlen -= 2;
+						i += 2;
+					}
 					while (++i != ((*read)->width - strlen + 1))
 						res[++b] = '0';
-					(*read)->mod[0] == '-' ? (i = 0) : (i = -1);
+					i = (*read)->mod[0] == '-' ? 0 : -1;
+					if (b > 1 && (res[1] == 'x' || res[1] == 'X'))
+						i = 1;
 					while ((*read)->mod[++i])
 						res[++b] = (*read)->mod[i];
 					tmp = (*read)->mod;
@@ -204,7 +239,6 @@ int    ft_app_width(t_rd **read)
 					(*read)->mod = res;
 				    free((void *)tmp);
 				}
-
 			}
 		}
 	}
@@ -223,34 +257,32 @@ int    ft_app_fl(t_rd **read)
 	b = 0;
 	if ((*read)->mod)
 	{
-//		if ((*read)->flag IS_PL && (*read)->mod[0] != '-' && (*read)->mod_smb != 'u') /* '+' */
-//		{
-//			strlen = ft_strlen((*read)->mod);
-//			if (!(res = (char *) malloc(sizeof(char) * (strlen + 2))))
-//				return (0);
-//			res[strlen + 1] = '\0';
-//			res[0] = '+';
-//			while ((*read)->mod[i])
-//			{
-//				res[++b] = (*read)->mod[i];
-//				++i;
-//			}
-//			tmp = (*read)->mod;
-//			(*read)->mod = res;
-//			free((void *) tmp);
-//		}
-		if ((*read)->flag IS_SP && !((*read)->flag IS_PL) && (*read)->mod[0] != '-' && (*read)->mod_smb != 'u' &&
-				!((*read)->flag IS_ZE) && (*read)->mod_smb != '%') /* ' ' */
+		if ((*read)->flag IS_SP && !((*read)->flag IS_PL) &&
+			(*read)->mod[0] != '-' && (*read)->mod_smb != 'u' &&
+				(*read)->mod_smb != '%' && (*read)->mod_smb != 'c') /* ' ' */
 		{
-			strlen = ft_strlen((*read)->mod);
+			strlen = (*read)->sign ? ft_strlen((*read)->mod) - 1 :
+					ft_strlen((*read)->mod);
 			if (!(res = (char *) malloc(sizeof(char) * (strlen + 2))))
 				return (0);
 			res[strlen + 1] = '\0';
-			res[0] = ' ';
-			while ((*read)->mod[i])
+			if ((*read)->sign && !((*read)->flag IS_MIN))
 			{
-				res[++b] = (*read)->mod[i];
-				++i;
+				if ((*read)->mod[0] == ' ' || (*read)->mod[0] == '0')
+					res[0] = ' ';
+				else
+					res[0] = (*read)->mod[0];
+				while ((*read)->mod[++i])
+					res[i] = (*read)->mod[i];
+			}
+			else
+			{
+				res[0] = ' ';
+				while (++b < strlen + 1)
+				{
+					res[b] = (*read)->mod[i];
+					++i;
+				}
 			}
 			tmp = (*read)->mod;
 			(*read)->mod = res;
@@ -273,7 +305,8 @@ int 	ft_add_pl(t_rd **read)
 	b = 0;
 	if ((*read)->mod)
 	{
-		if ((*read)->flag IS_PL && (*read)->mod[0] != '-' && (*read)->mod_smb != 'u') /* '+' */
+		if ((*read)->flag IS_PL && (!(ft_strchr((*read)->mod, 45))) &&
+            (*read)->mod_smb != 'u' && (*read)->mod_smb != 's') /* '+' */
 		{
 			if ((*read)->width && (*read)->sign)
 			{
@@ -287,11 +320,6 @@ int 	ft_add_pl(t_rd **read)
 				else
 				{
 					strlen = ft_strlen((*read)->mod);
-//				if ((*read)->mod[0] == ' ')
-//				{
-//					strlen--;
-//					i++;
-//				}
 					if (!(res = (char *) malloc(sizeof(char) * (strlen + 1))))
 						return (0);
 					res[strlen] = '\0';
@@ -310,11 +338,6 @@ int 	ft_add_pl(t_rd **read)
 			else
 			{
 				strlen = ft_strlen((*read)->mod);
-//				if ((*read)->mod[0] == ' ')
-//				{
-//					strlen--;
-//					i++;
-//				}
 				if (!(res = (char *) malloc(sizeof(char) * (strlen + 2))))
 					return (0);
 				res[strlen + 1] = '\0';
@@ -329,68 +352,85 @@ int 	ft_add_pl(t_rd **read)
 				free((void *) tmp);
 			}
 		}
-		if ((*read)->flag IS_O) /* '#' */
-		{
-			if ((*read)->mod_smb == 'o' && !((*read)->mod[0] == '0' && !(*read)->mod[1]))
-			{
-				if ((*read)->width && ((*read)->mod[0] == ' ' || (*read)->mod[0] == '0'))
-				{
-					while ((*read)->mod[i] == ' ')
-						++i;
-					if (i > 0)
-						(*read)->mod[i - 1] = '0';
-				}
-				else
-				{
-					strlen = ft_strlen((*read)->mod);
-					if (!(res = (char *) malloc(sizeof(char) * (strlen + 2))))
-						return (0);
-					res[strlen + 1] = '\0';
-					res[0] = '0';
-					while ((*read)->mod[i]) {
-						res[++b] = (*read)->mod[i];
-						++i;
-					}
-					tmp = (*read)->mod;
-					(*read)->mod = res;
-					free((void *) tmp);
-				}
+	}
+	return (SUCCESS);
+}
 
-			}
-			else if (((*read)->mod_smb == 'x' || (*read)->mod_smb == 'X') && !((*read)->mod[0] == '0'
-											 && !(*read)->mod[1]) && (*read)->mod[0])
+int     ft_add_sharp(t_rd **read)
+{
+	char            *res;
+	unsigned long   strlen;
+	int             b;
+	char            *tmp;
+	unsigned long   i;
+
+	i = 0;
+	b = 0;
+	if ((*read)->kostil == 4 && ((*read)->mod_smb == 'o' ||
+		(*read)->mod_smb == 'x' || (*read)->mod_smb == 'X'))
+		return (SUCCESS);
+	if ((*read)->flag IS_O) /* '#' */
+	{
+		if ((*read)->mod_smb == 'o' && !((*read)->mod[0] == '0' && !(*read)->mod[1]))
+		{
+			if ((*read)->width && ((*read)->mod[0] == ' ' || (*read)->mod[0] == '0'))
 			{
-				if ((*read)->width && (((*read)->mod[0] == ' ' && (*read)->mod[1] == ' ')
-				|| ((*read)->mod[0] == '0' && (*read)->mod[1] == '0')))
-				{
-					if ((*read)->mod[i] == ' ')
-					{
-						while ((*read)->mod[i] == ' ')
-							i++;
-						(*read)->mod[i - 1] = (*read)->mod_smb == 'x' ? 'x' : 'X';
-						(*read)->mod[i - 2] = '0';
-					}
-					else
-						(*read)->mod[1] = (*read)->mod_smb == 'x' ? 'x' : 'X';
-				}
-				else
-				{
-					b = 1;
-					strlen = ft_strlen((*read)->mod);
-					if (!(res = (char *) malloc(sizeof(char) * (strlen + 3))))
-						return (0);
-					res[strlen + 2] = '\0';
-					res[0] = '0';
-					res[1] = (*read)->mod_smb == 'x' ? 'x' : 'X';
-					while ((*read)->mod[i]) {
-						res[++b] = (*read)->mod[i];
-						++i;
-					}
-					tmp = (*read)->mod;
-					(*read)->mod = res;
-					free((void *) tmp);
-				}
+				while ((*read)->mod[i] == ' ')
+					++i;
+				if (i > 0)
+					(*read)->mod[i - 1] = '0';
 			}
+			else
+			{
+				strlen = ft_strlen((*read)->mod);
+				if (!(res = (char *) malloc(sizeof(char) * (strlen + 2))))
+					return (0);
+				res[strlen + 1] = '\0';
+				res[0] = '0';
+				while ((*read)->mod[i])
+				{
+					res[++b] = (*read)->mod[i];
+					++i;
+				}
+				tmp = (*read)->mod;
+				(*read)->mod = res;
+				free((void *) tmp);
+			}
+
+		}
+		else if (((*read)->mod_smb == 'x' || (*read)->mod_smb == 'X') &&
+			!((*read)->mod[0] == '0' && !(*read)->mod[1]) && (*read)->mod[0])
+		{
+//			if ((*read)->width && (((*read)->mod[0] == ' ' && (*read)->mod[1] == ' ')
+//			                       || ((*read)->mod[0] == '0' && (*read)->mod[1] == '0')))
+//			{
+//				if ((*read)->mod[i] == ' ')
+//				{
+//					while ((*read)->mod[i] == ' ')
+//						i++;
+//					(*read)->mod[i - 1] = (*read)->mod_smb == 'x' ? 'x' : 'X';
+//					(*read)->mod[i - 2] = '0';
+//				}
+//				else
+//					(*read)->mod[1] = (*read)->mod_smb == 'x' ? 'x' : 'X';
+//			}
+//			else
+//			{
+				b = 1;
+				strlen = ft_strlen((*read)->mod);
+				if (!(res = (char *) malloc(sizeof(char) * (strlen + 3))))
+					return (0);
+				res[strlen + 2] = '\0';
+				res[0] = '0';
+				res[1] = (*read)->mod_smb == 'x' ? 'x' : 'X';
+				while ((*read)->mod[i]) {
+					res[++b] = (*read)->mod[i];
+					++i;
+				}
+				tmp = (*read)->mod;
+				(*read)->mod = res;
+				free((void *) tmp);
+//			}
 		}
 	}
 	return (SUCCESS);
@@ -398,18 +438,22 @@ int 	ft_add_pl(t_rd **read)
 
 int    ft_solver(t_rd **read, t_out *output)
 {
-	if ((((*read)->mod_smb == 'd' || (*read)->mod_smb == 'i' || (*read)->mod_smb == 'u')
-	    && ((*read)->prs)) || (!(*read)->prs && (*read)->mod[0] == '0' && !(*read)->mod[1]))
+	if ((((*read)->mod_smb == 'd' || (*read)->mod_smb == 'i' ||
+		(*read)->mod_smb == 'u' || (*read)->mod_smb == 'p') &&
+		((*read)->prs)) || (!(*read)->prs && (*read)->mod[0] == '0' &&
+			(!(*read)->mod[1] || ((*read)->mod[2] == '0' && !(*read)->mod[3]))))
 	{
 		if (!(ft_app_d_prs(read)))
 			return (0);
 	}
-	if ((*read)->mod_smb == 's' && ((*read)->prs))
-	    if ((*read)->prs < ft_strlen((*read)->mod))
+	if ((*read)->mod_smb == 's' && ((*read)->prs || (*read)->kostil == 3))
+	    if ((*read)->prs < (long)ft_strlen((*read)->mod))
             (*read)->mod[(*read)->prs] = '\0';
-	if (!(ft_app_fl(read)))
+	if (!(ft_add_sharp(read)))
 		return (0);
 	if (!(ft_app_width(read)))
+		return (0);
+	if (!(ft_app_fl(read)))
 		return (0);
 	if (!(ft_add_pl(read)))
 		return (0);

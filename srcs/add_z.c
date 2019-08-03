@@ -15,7 +15,7 @@
 char  *add_z(char *s, int z)
 {
     int i = 0;
-    while (s[i] && !(s[i + 1] != '0'))
+    while (s[i] && s[i + 1] == '0')
         ++i;
     while (s[++i])
     {

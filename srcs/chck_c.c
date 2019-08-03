@@ -15,8 +15,5 @@
 void	chck_c(t_rd **read, va_list **ap)
 {
 	(*read)->mod_smb = 'c';
-	if ((*read)->size == 1)
-		(*read)->mod2 = ft_c(va_arg(**ap, wchar_t), 1, read);
-	else
-		(*read)->mod = ft_c(va_arg(**ap, int), 0, read);
+	(*read)->mod = ft_c(va_arg(**ap, int), 0, read);
 }

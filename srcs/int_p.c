@@ -20,7 +20,7 @@ char    *int_p(int e, char *man)
 
     if (!(in = (char *)malloc(sizeof(char) * 5001)))
         return (NULL);
-    memset(in, '0', 5000);
+    ft_memset(in, '0', 5000);
     in[5000] = '\0';
     i = -1;
     while (--e > -1)

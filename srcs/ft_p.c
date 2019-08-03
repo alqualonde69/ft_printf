@@ -21,7 +21,7 @@ char    *ft_p(unsigned long long p)
     if (p)
     {
         s = u_itoa_base(p, 16, 1);
-        r = (char *)malloc(sizeof(char) * (strlen(s) + 3));
+        r = (char *)malloc(sizeof(char) * (ft_strlen(s) + 3));
         r[0] = '0';
         r[1] = 'x';
         i = -1;

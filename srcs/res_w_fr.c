@@ -27,9 +27,9 @@ char    *res_ne(char *fr, int i, int sign)
         res[++j] = '-';
     res[++j] = '0';
     res[++j] = '.';
-    i = 4936;
+    i = 4935;
     while (fr[++i])
-        res[++j] = fr[i];
+		res[++j] = fr[i];
     return (res);
 }
 

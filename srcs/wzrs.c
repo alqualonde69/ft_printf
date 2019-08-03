@@ -18,7 +18,7 @@ void    wzrs(char **t)
     int     j;
     char    *cp;
 
-    i = strlen(*t);
+    i = ft_strlen(*t);
     while (--i >= 0 && (*t)[i] == '0')
         ;
     cp = (char *)malloc(sizeof(char) * (i + 2));

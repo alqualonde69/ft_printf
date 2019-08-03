@@ -69,12 +69,12 @@ typedef struct			s_rd
 	unsigned short int	size;       /* Size of Output */
 	size_t      		smb_cnt;    /* Counter for Checking */
 	size_t              kostil;     /* Kostil for prs */
-	size_t  			width;      /* Field Width */
-	size_t				prs;        /* Precision */
+	long      			width;      /* Field Width */
+	long				prs;        /* Precision */
 	size_t      		strlen;     /* Size Of String */
 	struct s_rd			*next;
 	struct s_rd			*prev;
-	char 				zero;
+	int 				zero;
 }						t_rd;
 
 typedef struct			s_out
@@ -109,11 +109,12 @@ typedef union			u_flts
 void        ft_reader(t_rd **read, va_list *ap, const char *format, t_out *out);
 void		ft_chck_flags(t_rd **read, const char *format);
 void		ft_chck_mod(t_rd **read, const char *format, va_list **ap, t_out *out);
-void		ft_chck_size(t_rd **read, const char *format/*, va_list **ap*/);
+void		ft_chck_size(t_rd **read, const char *format);
 void		ft_chck_precision(t_rd **read, const char *format, va_list **ap);
 void		ft_chck_wdth(t_rd **read, const char *format, va_list **ap);
 void		ft_rd(t_rd **rd, va_list *ap, const char *ft, t_out **out);
-int         ft_put_percent(t_rd **read, const char *format);
+void        ft_put_percent(t_rd **read);
+void        ft_k(t_rd **read, const char *format, va_list **ap, t_out *out);
 void		chck_b(t_rd **read, va_list **ap);
 void		chck_c(t_rd **read, va_list **ap);
 void		chck_di(t_rd **read, va_list **ap, int a);
@@ -126,13 +127,13 @@ void		chck_sr(t_rd **read, va_list **ap, int a);
 void		chck_x(t_rd **read, va_list **ap);
 void		chck_xu(t_rd **read, va_list **ap);
 void        chck_u(t_rd **read, va_list **ap);
-int         chck_nthng(const char *format, t_out *output, t_rd **rd);
+void        chck_nthng(const char *format, t_out *output, t_rd **rd);
 
 /*
 **  MAIN
 */
 
-int			ft_putbuf(char *s, int b);
+void		ft_putbuf(char *s, int b);
 char		*ft_bufjoin(char *s1, char *s2, int b1, int b2);
 void		ft_free_lists(t_rd **read);
 int			ft_printf(const char *format, ...);
@@ -149,6 +150,7 @@ int			ft_app_width(t_rd **read);
 int			ft_app_size(t_rd **read, t_out **output);
 int 		ft_put_out(t_rd **read, t_out **output);
 int		 	ft_add_pl(t_rd **read);
+int         ft_add_sharp(t_rd **read);
 
 /*
 **  OUTPUT
@@ -197,6 +199,6 @@ char            *ft_rg(char *s, int a, unsigned short int d);
 char            *s_itoa(int64_t n);
 char            *u_itoa(u_int64_t n);
 void            wzrs(char **t);
-char            *ft_ro(char **s, size_t prs, int l);
+char            *ft_ro(char **s, size_t prs, t_rd **read, int l);
 
 #endif
