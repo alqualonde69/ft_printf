@@ -12,20 +12,25 @@
 
 #include "ft_printf.h"
 
-void    e_zrs(char *s, int a, int i)
+void    e_zrs(char **s, int a, int i)
 {
     char    *t;
     char    *cl;
     int     k;
 
-    t = (char *)malloc(sizeof(char) * (a + i + 1));
-    t[a + i] = '\0';
-    k = -1;
-    while (s[++k])
-        t[k] = s[k];
-    while (k < i + a)
-        t[k++] = '0';
-    cl = s;
-    s = t;
-    free(cl);
+    if (a)
+    {
+		t = (char *) malloc(sizeof(char) * (a + i + 1));
+		t[a + i] = '\0';
+		k = -1;
+		while ((*s)[++k])
+			t[k] = (*s)[k];
+		while (k < i + a)
+			t[k++] = '0';
+		cl = *s;
+		*s = t;
+    	free(cl);
+    }
+    else
+		(*s)[i - 1] = '\0';
 }

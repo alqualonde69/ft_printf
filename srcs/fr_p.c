@@ -21,13 +21,11 @@ char    *fr_p(int i, char *man)
     fr = (char *)malloc(sizeof(char) * 5001);
     ft_memset(fr, '0', 5000);
     fr[5000] = '\0';
-    len = i < 0 ? ft_strlen(man) : ft_strlen(man + i + 1);
+    len = i < 0 ? 1500 : ft_strlen(man + i + 1);
     e = i < 0 ? i * -1 : 1;
     i < 0 ? i = -1 : 0;
     while (man[++i])
     {
-    	if (len - e < 0)
-    		break ;
         if (man[i] == '1')
             str_ad(&fr, add_z(pw_to_str(5, e), len - e));
         ++e;

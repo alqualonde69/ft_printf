@@ -11,12 +11,15 @@
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
+#include <float.h>
 
 int		main()
 {
-    int a = printf("%f", 9.9999999);
+    int a = printf("%f", -0.00032);
+//	int a = printf("%f", 0.00039);
     printf("\n%d\n", a);
-	int b = ft_printf("%f", 9.9999999);
+	int b = ft_printf("%f", -0.00032);
+//	int b = ft_printf("%f", 0.00039);
 	printf("\n%d\n", b);
 	return (0);
 }

@@ -21,6 +21,7 @@ void    wzrs(char **t)
     i = ft_strlen(*t);
     while (--i >= 0 && (*t)[i] == '0')
         ;
+    (*t)[i] == '.' ? --i : 0;
     cp = (char *)malloc(sizeof(char) * (i + 2));
     cp[i + 1] = '\0';
     j = -1;

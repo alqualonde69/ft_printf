@@ -18,14 +18,14 @@ char    *res_o_fr(char *in, int sign)
     int     i;
     int     j;
 
-    i = 0;
-    while (in[i] == '0')
-        ++i;
-    res = (sign) ? (char *)malloc(sizeof(char) * (5003 - i)) : (char *)malloc(sizeof(char) * (5002 - i));
+    i = -1;
+    while (in[++i] == '0')
+        ;
+    res = (sign) ? (char *)malloc(sizeof(char) * (5003 - i)) :
+    		(char *)malloc(sizeof(char) * (5002 - i));
     res[5001 - i] = '\0';
     j = -1;
-    if (sign)
-        res[++j] = '-';
+    sign ? res[++j] = '-' : 0;
     while (in[i])
         res[++j] = in[i++];
     res[++j] = '.';

@@ -14,12 +14,14 @@
 
 char  *add_z(char *s, int z)
 {
-    int i = 0;
-    while (s[i] && s[i + 1] == '0')
-        ++i;
+    int		i;
+
+    i = -1;
+    while (s[++i] && s[i + 1] == '0')
+        ;
     while (s[++i])
     {
-        s[i - z] = s[i];
+        i - z >= 0 ? s[i - z] = s[i] : 0;
         s[i] = '0';
     }
     return (s);

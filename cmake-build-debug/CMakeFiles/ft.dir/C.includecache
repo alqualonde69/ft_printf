@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../includes/ft_printf.h
+/Users/shunt/Desktop/ft/includes/ft_printf.h
 stdarg.h
 -
 unistd.h
@@ -16,9 +16,9 @@ stdlib.h
 stdio.h
 -
 ../libft/includes/libft.h
-../libft/includes/libft.h
+/Users/shunt/Desktop/ft/libft/includes/libft.h
 
-../libft/includes/libft.h
+/Users/shunt/Desktop/ft/libft/includes/libft.h
 stdlib.h
 -
 unistd.h
@@ -26,7 +26,9 @@ unistd.h
 string.h
 -
 
-/Users/shunt/Desktop/ft/srcs/rnd.c
-ft_printf.h
-/Users/shunt/Desktop/ft/srcs/ft_printf.h
+/Users/shunt/Desktop/ft/main.c
+includes/ft_printf.h
+/Users/shunt/Desktop/ft/includes/ft_printf.h
+float.h
+-
 

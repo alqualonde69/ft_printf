@@ -18,20 +18,20 @@ void	chck_f(t_rd **read, va_list **ap, int a)
 	{
 		(*read)->mod_smb = 'f';
 		if ((*read)->size == 128)
-			(*read)->mod = ft_round(ft_fld(va_arg(**ap,
-							long double), 1), (*read)->prs);
+			(*read)->mod = ft_round(ft_fld(va_arg(**ap, long double), 1),
+					(*read)->prs, (*read)->kostil, (*read)->flag);
 		else
-			(*read)->mod = ft_round(ft_fld(va_arg(**ap,
-							double), 1), (*read)->prs);
+			(*read)->mod = ft_round(ft_fld(va_arg(**ap, double), 1),
+					(*read)->prs, (*read)->kostil, (*read)->flag);
 	}
 	else
 	{
 		(*read)->mod_smb = 'F';
 		if ((*read)->size == 128)
-			(*read)->mod = ft_round(ft_fld(va_arg(**ap,
-							long double), 0), (*read)->prs);
+			(*read)->mod = ft_round(ft_fld(va_arg(**ap, long double), 0),
+					(*read)->prs, (*read)->kostil, (*read)->flag);
 		else
-			(*read)->mod = ft_round(ft_fld(va_arg(**ap,
-							double), 0), (*read)->prs);
+			(*read)->mod = ft_round(ft_fld(va_arg(**ap, double), 0),
+					(*read)->prs, (*read)->kostil, (*read)->flag);
 	}
 }

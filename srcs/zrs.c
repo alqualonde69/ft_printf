@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void    zrs(char *s, int a, int i)
+void    zrs(char **s, int a, int i)
 {
     char    *t;
     char    *cl;
@@ -21,11 +21,11 @@ void    zrs(char *s, int a, int i)
     t = (char *)malloc(sizeof(char) * (a + i + 2));
     t[a + i + 1] = '\0';
     k = -1;
-    while (s[++k])
-        t[k] = s[k];
+    while ((*s)[++k])
+        t[k] = (*s)[k];
     while (k < a + i + 1)
         t[k++] = '0';
-    cl = s;
-    s = t;
+    cl = *s;
+    *s = t;
     free(cl);
 }

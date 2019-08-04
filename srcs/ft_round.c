@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char    *ft_round(char *s, size_t a)
+char    *ft_round(char *s, size_t a, int b, unsigned short f)
 {
     int     i;
     int     k;
@@ -30,12 +30,12 @@ char    *ft_round(char *s, size_t a)
         while (t[--i] != '.')
             ;
         if (k - i - 1 < (int)a)
-            zrs(t, a, i);
+            zrs(&t, a, i);
         else
-            a ? rnd(&t, a, i) : rnd_z(t, i);
+            a ? rnd(&t, a, i, b) : rnd_z(&t, i, a, f);
     }
     else
-        e_zrs(t, a, i);
+        e_zrs(&t, a, i);
     s_str(&s, &t, &c);
     return (s);
 }
