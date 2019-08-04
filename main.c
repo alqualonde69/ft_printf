@@ -14,9 +14,9 @@
 
 int		main()
 {
-    int a = printf("%f", 0.000039);
+    int a = printf("%f", 9.9999999);
     printf("\n%d\n", a);
-	int b = ft_printf("%f", 0.000039);
+	int b = ft_printf("%f", 9.9999999);
 	printf("\n%d\n", b);
 	return (0);
 }

@@ -33,6 +33,6 @@ char  *pw_to_str(int a, int b)
         a /= 10;
     }
     while (b-- > 1)
-        str_ml(s, tmp);
+        str_ml(&s, tmp);
     return (s);
 }

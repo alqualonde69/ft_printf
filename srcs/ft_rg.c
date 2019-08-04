@@ -30,7 +30,7 @@ char    *ft_rg(char *s, int a, unsigned short int d)
         if (t[i] >= '0' && t[i] <= '9')
             ++k;
     if (t[i])
-        t[i] == '.' ? rndg_z(t, i, d) : rndg(t, i);
+        t[i] == '.' ? rndg_z(&t, i, d) : rndg(&t, i);
 	(d IS_O) ? 0 : wzrs(&t);
     s_str(&s, &t, &c);
     return (s);

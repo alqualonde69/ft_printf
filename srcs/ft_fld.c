@@ -32,9 +32,9 @@ char    *ft_fld(long double f, int c)
         return (NULL);
     if (!(fr = fr_p(e, res)))
         return (NULL);
-    write(1, "fr = ", 5);
-	write(1, fr, strlen(fr));
-	write(1, "\n", 1);
+//    write(1, "fr = ", 5);
+//	write(1, fr, strlen(fr));
+//	write(1, "\n", 1);
     free(res);
     res = (e < 63) ? res_w_fr(e, in, fr, sign) : res_o_fr(in, sign);
     free(in);

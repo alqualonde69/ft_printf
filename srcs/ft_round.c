@@ -32,7 +32,7 @@ char    *ft_round(char *s, size_t a)
         if (k - i - 1 < (int)a)
             zrs(t, a, i);
         else
-            a ? rnd(t, a, i) : rnd_z(t, i);
+            a ? rnd(&t, a, i) : rnd_z(t, i);
     }
     else
         e_zrs(t, a, i);

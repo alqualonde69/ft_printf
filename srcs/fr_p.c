@@ -26,8 +26,10 @@ char    *fr_p(int i, char *man)
     i < 0 ? i = -1 : 0;
     while (man[++i])
     {
+    	if (len - e < 0)
+    		break ;
         if (man[i] == '1')
-            str_ad(fr, add_z(pw_to_str(5, e), len - e));
+            str_ad(&fr, add_z(pw_to_str(5, e), len - e));
         ++e;
     }
     return (fr);

@@ -28,7 +28,7 @@ char    *int_p(int e, char *man)
         {
             if (!(tmp = pw_to_str(2, e)))
                 return (NULL);
-            in = str_ad(in, tmp);
+            str_ad(&in, tmp);
         }
     return (in);
 }
