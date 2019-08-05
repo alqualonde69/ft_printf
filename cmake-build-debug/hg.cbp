@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="hg"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/shunt/Desktop/hg/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/shunt/Desktop/hg/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/shunt/Desktop/hg/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hg">
+				<Option output="/Users/shunt/Desktop/hg/cmake-build-debug/hg" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/shunt/Desktop/hg/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/shunt/Desktop/hg/includes"/>
+					<Add directory="/Users/shunt/Desktop/hg/libft/includes"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 hg"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hg/fast">
+				<Option output="/Users/shunt/Desktop/hg/cmake-build-debug/hg" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/shunt/Desktop/hg/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/shunt/Desktop/hg/includes"/>
+					<Add directory="/Users/shunt/Desktop/hg/libft/includes"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 hg/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/shunt/Desktop/hg/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/shunt/Desktop/hg/includes/ft_printf.h">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/includes/get_next_line.h">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/includes/libft.h">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_abs.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_atoi.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_bzero.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_factorial.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_isalnum.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_isalpha.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_isascii.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_isdigit.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_isprint.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_itoa.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_lstadd.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_lstdel.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_lstdelone.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_lstiter.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_lstmap.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_lstnew.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_memalloc.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_memccpy.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_memchr.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_memcmp.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_memcpy.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_memdel.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_memmove.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_memset.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_putchar.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_putchar_fd.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_putendl.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_putendl_fd.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_putnbr.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_putnbr_fd.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_putstr.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_putstr_fd.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_sqrt.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strcat.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strchr.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strclr.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strcmp.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strcpy.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strdel.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strdup.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strequ.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_striter.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_striteri.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strjoin.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strlcat.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strlen.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strmap.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strmapi.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strncat.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strncmp.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strncpy.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strnequ.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strnew.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strnstr.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strrchr.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strrev.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strsplit.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strstr.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strsub.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_strtrim.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_tolower.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/ft_toupper.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/libft/sources/get_next_line.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/main.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/add_z.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/apply_flags.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/c_str.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/chck_b.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/chck_c.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/chck_di.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/chck_e.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/chck_f.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/chck_g.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/chck_o.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/chck_p.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/chck_sr.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/chck_u.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/chck_x.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/chck_xu.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/e_zrs.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/fld_edge.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/fr_p.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_c.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_d.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_e.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_fld.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_free_output.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_g.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_itoa_base.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_itoa_fp.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_ox.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_p.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_printf.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_put_percent.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_rg.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_round.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_s.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/ft_u.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/int_p.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/mantis.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/mexp.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/pw.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/pw_to_str.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/reader.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/res_o_fr.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/res_w_fr.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/rnd.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/rnd_z.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/rndg.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/rndg_z.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/s_str.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/str_ad.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/str_ml.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/t_str.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/wzrs.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/srcs/zrs.c">
+			<Option target="hg"/>
+		</Unit>
+		<Unit filename="/Users/shunt/Desktop/hg/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

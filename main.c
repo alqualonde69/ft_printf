@@ -15,8 +15,8 @@
 
 int		main()
 {
-    int a = printf("%e", (double)0);
+    int a = printf("%%");
     printf("\n%d\n", a);
-	int b = ft_printf("%e", (double)0);
+	int b = ft_printf("%%");
 	return (0);
 }
