@@ -22,7 +22,7 @@ void    rndg(char **s, int i)
     else if ((*s)[i] > '5' || ((*s)[i] == '5' && (*s)[i - 1] % 2))
     {
 		(*s)[i] = '\0';
-        l = ft_strlen(s);
+        l = ft_strlen(*s);
         t = (char *)malloc(sizeof(char) * (l + 1));
         ft_memset(t, '0', l);
         t[l] = '\0';

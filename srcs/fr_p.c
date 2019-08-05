@@ -12,18 +12,39 @@
 
 #include "ft_printf.h"
 
+static char *fr_ne(int e, char *man)
+{
+	char 	*fr;
+	int 	i;
+	int 	k;
+
+	k = e + 64;
+	fr = (char *)malloc(sizeof(char) * 17001);
+	ft_memset(fr, '0', 17000);
+	fr[17000] = '\0';
+	i = -1;
+	while (man[++i])
+	{
+		if (man[i] == '1')
+			str_ad(&fr, add_z(pw_to_str(5, e), k - e));
+		++e;
+	}
+	return (fr);
+}
+
 char    *fr_p(int i, char *man)
 {
     char    *fr;
     int     len;
     int     e;
 
-    fr = (char *)malloc(sizeof(char) * 5001);
-    ft_memset(fr, '0', 5000);
-    fr[5000] = '\0';
-    len = i < 0 ? 1500 : ft_strlen(man + i + 1);
-    e = i < 0 ? i * -1 : 1;
-    i < 0 ? i = -1 : 0;
+    if (i < 0)
+		return (fr_ne(i * -1, man));
+    fr = (char *)malloc(sizeof(char) * 17001);
+    ft_memset(fr, '0', 17000);
+    fr[17000] = '\0';
+    len = ft_strlen(man + i + 1);
+    e = 1;
     while (man[++i])
     {
         if (man[i] == '1')

@@ -17,7 +17,8 @@ void    s_str(char **s, char **t, char **c)
     int     i;
     int     k;
 
-    (*s) ? free(*s) : 0;
+    if (*s)
+    	free(*s);
     i = (*c) ? ft_strlen(*t) + ft_strlen(*c) : ft_strlen(*t);
     if (!(*s = (char *)malloc(sizeof(char) * (i + 1))))
         return ;

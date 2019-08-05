@@ -17,16 +17,17 @@ char  *pw_to_str(int a, int b)
     char  *s;
     int i;
     int tmp = a;
-    if (!(s = (char *)malloc(sizeof(char) * 5001)))
+    if (!(s = (char *)malloc(sizeof(char) * 17001)))
+
         return (NULL);
-    ft_memset(s, '0', 5000);
-    s[5000] = '\0';
+    ft_memset(s, '0', 17000);
+    s[17000] = '\0';
     if (b == 0)
     {
-        s[4999] = '1';
+        s[16999] = '1';
         return (s);
     }
-    i = 5000;
+    i = 17000;
     while (a)
     {
         s[--i] = (a % 10) + '0';

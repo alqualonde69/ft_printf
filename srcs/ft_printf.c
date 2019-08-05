@@ -12,71 +12,6 @@
 
 #include "ft_printf.h"
 
-int     ft_pt_frst(const char *format, t_out *output, t_rd **rd)
-{
-	char	*res;
-	char	*tmp2;
-	int		tmp;
-	int		i;
-	int		b;
-
-	i = 0;
-	b = -1;
-	tmp = (*rd)->smb_cnt;
-	while (format[(*rd)->smb_cnt] && format[(*rd)->smb_cnt] != '%')
-	{
-		(*rd)->smb_cnt++;
-		i++;
-	}
-	if (!(res = (char *)malloc(sizeof(char) * (i + 1))))
-		return (0);
-	res[i] = '\0';
-	tmp--;
-	while (++b < i)
-		res[b] = format[++tmp];
-	if (!(*output).buf)
-		(*output).buf = ft_strnew(0);
-	tmp2 = (*output).buf;
-	(*output).buf = ft_bufjoin((*output).buf, res, (*output).cnt, i);
-	free((void *)res);
-	(*output).cnt += i;
-	tmp2 ? free((void *)tmp2) : 0;
-	return (SUCCESS);
-}
-
-void    ft_reader(t_rd **read, va_list *ap, const char *format, t_out *out)
-{
-	(*read)->zero = 0;
-	format[(*read)->smb_cnt] == '%' ? ++(*read)->smb_cnt : 0;
-	ft_chck_flags(read, format);
-	ft_chck_wdth(read, format, &ap);
-	ft_chck_precision(read, format, &ap);
-	ft_chck_size(read, format);
-	ft_chck_mod(read, format, &ap, out);
-	if (((*read)->mod_smb == 'd' || (*read)->mod_smb == 'i' ||
-	     (*read)->mod_smb == 's' || (*read)->mod_smb == 'u' ||
-	     (*read)->mod_smb == 'p') && !(*read)->prs)
-		(*read)->kostil = 3;
-	else if (((*read)->mod_smb == 'd' || (*read)->mod_smb == 'i' ||
-	    (*read)->mod_smb == 's' || (*read)->mod_smb == 'u' ||
-	    (*read)->mod_smb == 'p') && (*read)->prs == 6 && (*read)->kostil != 1)
-		(*read)->prs = 0;
-}
-
-void    ft_free_lists(t_rd **read)
-{
-	t_rd *tmp;
-
-	while ((*read))
-	{
-		tmp = (*read);
-		(*read)->mod ? free((*read)->mod) : 0;
-		(*read)->mod2 ? free((*read)->mod2) : 0;
-		*read = (*read)->prev;
-		free(tmp);
-	}
-}
-
 void	ft_putbuf(char *s, int b)
 {
 	int		i;
@@ -86,9 +21,9 @@ void	ft_putbuf(char *s, int b)
 		write(1, &s[i], 1);
 }
 
-t_rd  *ft_newlist(t_rd **t)
+t_rd	*ft_newlist(t_rd **t)
 {
-	t_rd    *l;
+	t_rd	*l;
 
 	if (!(l = (t_rd *)malloc(sizeof(t_rd))))
 		return (NULL);
@@ -109,20 +44,35 @@ t_rd  *ft_newlist(t_rd **t)
 	return (l);
 }
 
-int ft_printf(const char *format, ...)
+void	ft_next_list(t_printf *p, const char *format)
+{
+	p->read = p->read->next;
+	p->read->smb_cnt = p->read->prev->smb_cnt;
+	p->read->strlen = p->read->prev->strlen;
+	format[p->read->smb_cnt] ? ++p->read->smb_cnt : 0;
+}
+
+int		ft_prepare(t_printf *p, const char *format)
+{
+	p->output.cnt = 0;
+	p->output.buf = NULL;
+	if (!(p->read = (t_rd *)malloc(sizeof(t_rd))))
+		return (0);
+	p->read->strlen = ft_strlen(format);
+	p->read->smb_cnt = 0;
+	p->read->prev = NULL;
+	return (SUCCESS);
+}
+
+int		ft_printf(const char *format, ...)
 {
 	t_printf	p;
 
 	if (!(*format))
 		return (0);
-	p.output.cnt = 0;
-	va_start (p.ap, format);
-	p.output.buf = NULL;
-	if (!(p.read = (t_rd *)malloc(sizeof(t_rd))))
+	va_start(p.ap, format);
+	if (!(ft_prepare(&p, format)))
 		return (0);
-	p.read->strlen = ft_strlen(format);
-	p.read->smb_cnt = 0;
-	p.read->prev = NULL;
 	while (format[p.read->smb_cnt])
 	{
 		if (!(p.read->next = ft_newlist(&p.read)))
@@ -132,10 +82,7 @@ int ft_printf(const char *format, ...)
 		ft_reader(&p.read, &p.ap, format, &p.output);
 		if (!(ft_solver(&p.read, &p.output)))
 			return (0);
-		p.read = p.read->next;
-		p.read->smb_cnt = p.read->prev->smb_cnt;
-		p.read->strlen = p.read->prev->strlen;
-        format[p.read->smb_cnt] ? ++p.read->smb_cnt : 0;
+		ft_next_list(&p, format);
 	}
 	va_end(p.ap);
 	ft_putbuf(p.output.buf, p.output.cnt);

@@ -17,14 +17,13 @@ char    *res_ne(char *fr, int i, int sign)
     char    *res;
     int     j;
 
-    res = (sign) ? (char *)malloc(sizeof(char) * (5066 - i)) :
-    		(char *)malloc(sizeof(char) * (5065 - i));
-    sign ? (res[5065 - i] = '\0') : (res[5064 - i] = '\0');
+    res = (sign) ? (char *)malloc(sizeof(char) * (17002)) :
+    		(char *)malloc(sizeof(char) * (17001));
+    sign ? (res[17001] = '\0') : (res[17000] = '\0');
     j = -1;
     sign ? res[++j] = '-' : 0;
     res[++j] = '0';
     res[++j] = '.';
-    i = 3499;
     while (fr[++i])
 		res[++j] = fr[i];
     return (res);
@@ -36,20 +35,20 @@ char    *res_w_fr(int e, char *in, char *fr, int sign)
     int     i;
     int     j;
 
+	if (e < 0)
+		return (res_ne(fr, 16935 + e, sign));
     i = -1;
     while (in[++i] == '0')
         ;
-    if (e < 0)
-        return (res_ne(fr, i, sign));
-    res = (sign) ? (char *)malloc(sizeof(char) * (5066 - i - e)) :
-    		(char *)malloc(sizeof(char) * (5065 - i - e));
-    sign ? (res[5065 - i - e] = '\0') : (res[5064 - i - e] = '\0');
+    res = (sign) ? (char *)malloc(sizeof(char) * (17066 - i - e)) :
+    		(char *)malloc(sizeof(char) * (17065 - i - e));
+    sign ? (res[17065 - i - e] = '\0') : (res[17064 - i - e] = '\0');
     j = -1;
     sign ? res[++j] = '-' : 0;
     while (in[i])
         res[++j] = in[i++];
     res[++j] = '.';
-    i = 4936 + e;
+    i = 16936 + e;
     while (fr[++i])
         res[++j] = fr[i];
     return (res);

@@ -157,32 +157,14 @@ int    ft_app_width(t_rd **read)
 		if ((*read)->width)
 		{
 			strlen = ft_strlen((*read)->mod) + (*read)->zero;
-//			if ((*read)->flag IS_PL && ((*read)->mod_smb == 'd' ||
-//				(*read)->mod_smb == 'i' || (*read)->mod_smb == 'f' ||
-//				(*read)->mod_smb == 'F' || (*read)->mod_smb == 'e' ||
-//				(*read)->mod_smb == 'E' || (*read)->mod_smb == 'g' ||
-//				(*read)->mod_smb == 'G'))
-//				++strlen;
 			if ((*read)->width > (long)strlen)
 			{
 				(*read)->sign = 1;
 				if (!(res = (char *)malloc(sizeof(char)*((*read)->width) + 1)))
 					return (0);
 				res[(*read)->width] = '\0';
-				if ((*read)->flag IS_MIN) /* if '-' */
+				if ((*read)->flag IS_MIN)
 				{
-//					if (((*read)->mod_smb == 'x' || (*read)->mod_smb == 'X') &&
-//							(*read)->flag IS_O)
-//					{
-//						b += 2;
-//						res[0] = ' ';
-//						res[1] = ' ';
-//					}
-//					if (((*read)->mod_smb == 'o' && (*read)->flag IS_O))
-//					{
-//						b += 1;
-//						res[0] = ' ';
-//					}
 					while (i < strlen)
 					{
 						res[++b] = (*read)->mod[i];
@@ -195,11 +177,13 @@ int    ft_app_width(t_rd **read)
 					(*read)->mod = res;
 					free((void *) tmp);
 				}
-				else if ((*read)->flag IS_ZE && !((*read)->flag IS_MIN) && ((!(*read)->prs ||
-					((*read)->prs == 6 && !(*read)->kostil) || (*read)->mod_smb == 'f' ||
-					(*read)->mod_smb == 'F' || (*read)->mod_smb == 'e' || (*read)->mod_smb == 'E' ||
-						(*read)->mod_smb == 'g' || (*read)->mod_smb == 'G' ||
-						(*read)->mod_smb == 'c' || (*read)->mod_smb == 's'))) /* if '0' */
+				else if ((*read)->flag IS_ZE && !((*read)->flag IS_MIN) &&
+						((!(*read)->prs || ((*read)->prs == 6 &&
+						!(*read)->kostil) || (*read)->mod_smb == 'f' ||
+						(*read)->mod_smb == 'F' || (*read)->mod_smb == 'e' ||
+						(*read)->mod_smb == 'E' || (*read)->mod_smb == 'g' ||
+						(*read)->mod_smb == 'G' || (*read)->mod_smb == 'c' ||
+						(*read)->mod_smb == 's')))
 				{
 					if ((*read)->mod[0] == '-')
 					{
@@ -228,7 +212,7 @@ int    ft_app_width(t_rd **read)
 					(*read)->mod = res;
 					free((void *)tmp);
 				}
-				else /* Whitout flags */
+				else
 				{
 					while (++i != ((*read)->width - strlen + 1))
 						res[++b] = ' ';
@@ -248,7 +232,7 @@ int    ft_app_width(t_rd **read)
 int    ft_app_fl(t_rd **read)
 {
 	unsigned long		i;
-	int 	            b;
+	unsigned long		b;
 	unsigned long 	    strlen;
 	char 	            *res;
 	char	            *tmp;
@@ -259,7 +243,7 @@ int    ft_app_fl(t_rd **read)
 	{
 		if ((*read)->flag IS_SP && !((*read)->flag IS_PL) &&
 			(*read)->mod[0] != '-' && (*read)->mod_smb != 'u' &&
-				(*read)->mod_smb != '%' && (*read)->mod_smb != 'c') /* ' ' */
+				(*read)->mod_smb != '%' && (*read)->mod_smb != 'c')
 		{
 			strlen = (*read)->sign ? ft_strlen((*read)->mod) - 1 :
 					ft_strlen((*read)->mod);
@@ -306,7 +290,7 @@ int 	ft_add_pl(t_rd **read)
 	if ((*read)->mod)
 	{
 		if ((*read)->flag IS_PL && (!(ft_strchr((*read)->mod, 45))) &&
-            (*read)->mod_smb != 'u' && (*read)->mod_smb != 's') /* '+' */
+            (*read)->mod_smb != 'u' && (*read)->mod_smb != 's')
 		{
 			if ((*read)->width && (*read)->sign)
 			{
@@ -320,10 +304,10 @@ int 	ft_add_pl(t_rd **read)
 				else
 				{
 					strlen = ft_strlen((*read)->mod);
-					if (!(res = (char *) malloc(sizeof(char) * (strlen + 1))))
+					if (!(res = (char *)malloc(sizeof(char) * (strlen + 1))))
 						return (0);
 					res[strlen] = '\0';
-					/*((*read)->width) ? (res[b] = '+') : */(res[0] = '+');
+					(res[0] = '+');
 					b = 0;
 					while ((*read)->mod[i] && --strlen > 0)
 					{
@@ -338,7 +322,7 @@ int 	ft_add_pl(t_rd **read)
 			else
 			{
 				strlen = ft_strlen((*read)->mod);
-				if (!(res = (char *) malloc(sizeof(char) * (strlen + 2))))
+				if (!(res = (char *)malloc(sizeof(char) * (strlen + 2))))
 					return (0);
 				res[strlen + 1] = '\0';
 				((*read)->width) ? (res[b] = '+') : (res[0] = '+');
@@ -369,11 +353,13 @@ int     ft_add_sharp(t_rd **read)
 	if ((*read)->kostil == 4 && ((*read)->mod_smb == 'o' ||
 		(*read)->mod_smb == 'x' || (*read)->mod_smb == 'X'))
 		return (SUCCESS);
-	if ((*read)->flag IS_O) /* '#' */
+	if ((*read)->flag IS_O)
 	{
-		if ((*read)->mod_smb == 'o' && !((*read)->mod[0] == '0' && !(*read)->mod[1]))
+		if ((*read)->mod_smb == 'o' && !((*read)->mod[0] == '0' &&
+			!(*read)->mod[1]))
 		{
-			if ((*read)->width && ((*read)->mod[0] == ' ' || (*read)->mod[0] == '0'))
+			if ((*read)->width && ((*read)->mod[0] == ' ' ||
+				(*read)->mod[0] == '0'))
 			{
 				while ((*read)->mod[i] == ' ')
 					++i;
@@ -401,36 +387,20 @@ int     ft_add_sharp(t_rd **read)
 		else if (((*read)->mod_smb == 'x' || (*read)->mod_smb == 'X') &&
 			!((*read)->mod[0] == '0' && !(*read)->mod[1]) && (*read)->mod[0])
 		{
-//			if ((*read)->width && (((*read)->mod[0] == ' ' && (*read)->mod[1] == ' ')
-//			                       || ((*read)->mod[0] == '0' && (*read)->mod[1] == '0')))
-//			{
-//				if ((*read)->mod[i] == ' ')
-//				{
-//					while ((*read)->mod[i] == ' ')
-//						i++;
-//					(*read)->mod[i - 1] = (*read)->mod_smb == 'x' ? 'x' : 'X';
-//					(*read)->mod[i - 2] = '0';
-//				}
-//				else
-//					(*read)->mod[1] = (*read)->mod_smb == 'x' ? 'x' : 'X';
-//			}
-//			else
-//			{
-				b = 1;
-				strlen = ft_strlen((*read)->mod);
-				if (!(res = (char *) malloc(sizeof(char) * (strlen + 3))))
-					return (0);
-				res[strlen + 2] = '\0';
-				res[0] = '0';
-				res[1] = (*read)->mod_smb == 'x' ? 'x' : 'X';
-				while ((*read)->mod[i]) {
-					res[++b] = (*read)->mod[i];
-					++i;
-				}
-				tmp = (*read)->mod;
-				(*read)->mod = res;
-				free((void *) tmp);
-//			}
+			b = 1;
+			strlen = ft_strlen((*read)->mod);
+			if (!(res = (char *) malloc(sizeof(char) * (strlen + 3))))
+				return (0);
+			res[strlen + 2] = '\0';
+			res[0] = '0';
+			res[1] = (*read)->mod_smb == 'x' ? 'x' : 'X';
+			while ((*read)->mod[i]) {
+				res[++b] = (*read)->mod[i];
+				++i;
+			}
+			tmp = (*read)->mod;
+			(*read)->mod = res;
+			free((void *) tmp);
 		}
 	}
 	return (SUCCESS);
@@ -459,5 +429,5 @@ int    ft_solver(t_rd **read, t_out *output)
 		return (0);
 	if (!(ft_put_out(read, &output)))
 		return (0);
-	return (1);
+	return (SUCCESS);
 }

@@ -15,7 +15,6 @@
 void    rnd_z(char **s, int i, size_t a, unsigned short f)
 {
 	char	*r;
-	int 	j;
 
     i = -1;
     while ((*s)[++i] && (*s)[i] != '.')

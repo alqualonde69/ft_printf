@@ -18,14 +18,16 @@ char    *int_p(int e, char *man)
     char    *tmp;
     int     i;
 
-    if (!(in = (char *)malloc(sizeof(char) * 5001)))
+    tmp = NULL;
+    if (!(in = (char *)malloc(sizeof(char) * 17001)))
         return (NULL);
-    ft_memset(in, '0', 5000);
-    in[5000] = '\0';
+    ft_memset(in, '0', 17000);
+    in[17000] = '\0';
     i = -1;
-    while (--e > -1)
-        if (man[++i] == '1')
+    while (--e > -1 && man[++i])
+        if (man[i] == '1')
         {
+        	tmp ? free(tmp) : 0;
             if (!(tmp = pw_to_str(2, e)))
                 return (NULL);
             str_ad(&in, tmp);

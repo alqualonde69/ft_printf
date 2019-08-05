@@ -25,6 +25,35 @@ int     ft_len(int k)
     return (l);
 }
 
+static char *ifz(int a, int b)
+{
+	char	*r;
+
+	if (b)
+	{
+		if (!(r = (char *) malloc(sizeof(char) * 8)))
+			return (NULL);
+	}
+	else
+		if (!(r = (char *)malloc(sizeof(char) * 7)))
+			return (NULL);
+	r[0] = b ? '-' : '0';
+	r[1] = b ? '0' : '.';
+	if (b)
+		r[2] = '.';
+	else
+		r[2] = a ? 'e' : 'E';
+	if (b)
+		r[3] = a ? 'e' : 'E';
+	else
+		r[3] = '+';
+	r[4] = b ? '+' : '0';
+	r[5] = '0';
+	r[6] = b ? '0' : '\0';
+	b ? r[7] = '\0' : 0;
+	return (r);
+}
+
 char     *ft_e(long double e, int a)
 {
     char    *s;
@@ -47,9 +76,11 @@ char     *ft_e(long double e, int a)
     }
     else
     {
-        i += 2;
-        while (s[i] == '0')
-            ++i;
+        i += 1;
+        while (s[++i] == '0')
+            ;
+        if (!s[i])
+			return (s[0] == '-' ? ifz(a, 1) : ifz(a, 0));
         k = (s[0] == '-') ? (i - 2) : (i - 1);
     }
     l = ft_strlen(s) + ft_len(k);
