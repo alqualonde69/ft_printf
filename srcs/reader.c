@@ -58,7 +58,7 @@ void	ft_chck_size(t_rd **rd, const char *format)
 		format[(*rd)->smb_cnt + 1] == 'h')
 			(*rd)->size |= SIGNED_CHAR;
 		else if (format[(*rd)->smb_cnt] == 'j')
-			(*rd)->size |= INT_MAX;
+			(*rd)->size |= INT_MAXX;
 		else if (format[(*rd)->smb_cnt] == 'z')
 			(*rd)->size |= SIZE_T;
 		else if (format[(*rd)->smb_cnt] == 't')

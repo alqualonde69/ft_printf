@@ -12,26 +12,26 @@
 
 #include "ft_printf.h"
 
-char    *ft_g(long double g, int a, size_t b, unsigned short int c)
+char	*ft_g(long double g, int a, size_t b, unsigned short int c)
 {
-    char    *f;
-    char    *e;
-    int     i;
+	char	*f;
+	char	*e;
+	int		i;
 
-    f = ft_fld(g, a);
-    e = ft_e(g, a);
-    i = -1;
-    while (f[++i] && f[i] != '.')
-        ;
-    i = f[0] == '-' ? --i : i;
-    if ((int)b < i)
-    {
-        free(f);
-        return (ft_rg(e, b, c));
-    }
-    else
-    {
-        free(e);
-        return (ft_rg(f, b, c));
-    }
+	f = ft_fld(g, a);
+	e = ft_e(g, a);
+	i = -1;
+	while (f[++i] && f[i] != '.')
+		;
+	i = f[0] == '-' ? --i : i;
+	if ((int)b < i)
+	{
+		free(f);
+		return (ft_rg(e, b, c));
+	}
+	else
+	{
+		free(e);
+		return (ft_rg(f, b, c));
+	}
 }

@@ -12,22 +12,22 @@
 
 #include "ft_printf.h"
 
-char    *res_o_fr(char *in, int sign)
+char	*res_o_fr(char *in, int sign)
 {
-    char    *res;
-    int     i;
-    int     j;
+	char	*res;
+	int		i;
+	int		j;
 
-    i = -1;
-    while (in[++i] == '0')
-        ;
-    res = (sign) ? (char *)malloc(sizeof(char) * (17003 - i)) :
-    		(char *)malloc(sizeof(char) * (17002 - i));
-    res[17001 - i] = '\0';
-    j = -1;
-    sign ? res[++j] = '-' : 0;
-    while (in[i])
-        res[++j] = in[i++];
-    res[++j] = '.';
-    return (res);
+	i = -1;
+	while (in[++i] == '0')
+		;
+	res = (sign) ? (char *)malloc(sizeof(char) * (17003 - i)) :
+			(char *)malloc(sizeof(char) * (17002 - i));
+	res[17001 - i] = '\0';
+	j = -1;
+	sign ? res[++j] = '-' : 0;
+	while (in[i])
+		res[++j] = in[i++];
+	res[++j] = '.';
+	return (res);
 }

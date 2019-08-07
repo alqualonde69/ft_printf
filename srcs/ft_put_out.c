@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_p.c                                            :+:      :+:    :+:   */
+/*   ft_put_out.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/14 12:43:13 by shunt             #+#    #+#             */
-/*   Updated: 2019/06/14 12:43:14 by shunt            ###   ########.fr       */
+/*   Created: 2019/08/07 01:31:37 by shunt             #+#    #+#             */
+/*   Updated: 2019/08/07 01:31:39 by shunt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*int_p(int e, char *man)
+int		ft_put_out(t_rd **read, t_out **output)
 {
-	char	*in;
-	char	*tmp;
-	int		i;
+	unsigned long	i;
+	int				b;
+	unsigned long	strlen;
+	char			*tmp;
 
-	tmp = NULL;
-	if (!(in = (char *)malloc(sizeof(char) * 17001)))
-		return (NULL);
-	ft_memset(in, '0', 17000);
-	in[17000] = '\0';
-	i = -1;
-	while (--e > -1 && man[++i])
-		if (man[i] == '1')
-		{
-			tmp ? free(tmp) : 0;
-			if (!(tmp = pw_to_str(2, e)))
-				return (NULL);
-			str_ad(&in, tmp);
-		}
-	return (in);
+	i = 0;
+	b = -1;
+	if ((*read)->mod)
+	{
+		strlen = ft_strlen((*read)->mod) + (*read)->zero;
+		tmp = (*output)->buf;
+		(*output)->buf = ft_bufjoin((*output)->buf, (*read)->mod,
+									(*output)->cnt, strlen);
+		(*output)->cnt += strlen;
+		free((void *)tmp);
+	}
+	return (SUCCESS);
 }

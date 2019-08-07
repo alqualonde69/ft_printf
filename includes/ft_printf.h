@@ -35,12 +35,6 @@
 # define F_OCT           (1u << 3u)
 # define F_ZERO          (1u << 4u)
 
-# define IS_MIN			& F_MINUS
-# define IS_PL          & F_PLUS
-# define IS_SP          & F_SPACE
-# define IS_O           & F_OCT
-# define IS_ZE          & F_ZERO
-
 /*
 **  SIZE (MASKS)
 */
@@ -49,7 +43,7 @@
 # define LONG_LONG_INT   (1u << 1u)
 # define SHORT_INT       (1u << 2u)
 # define SIGNED_CHAR     (1u << 3u)
-# define INT_MAX         (1u << 4u)
+# define INT_MAXX        (1u << 4u)
 # define SIZE_T          (1u << 5u)
 # define PTRDIFF_T       (1u << 6u)
 # define INT_64          (1u << 7u)
@@ -106,6 +100,15 @@ typedef struct			s_chckn
 	int					i;
 	int					b;
 }						t_check;
+
+typedef struct			s_width
+{
+	unsigned long		strlen;
+	unsigned long		i;
+	int					b;
+	char				*res;
+	char				*tmp;
+}						t_wid;
 
 /*
 **  UNION
@@ -165,12 +168,13 @@ int						ft_printf(const char *format, ...);
 int						ft_pt_frst(const char *format,
 						t_out *output, t_rd **rd);
 void					ft_next_list(t_printf *p, const char *format);
-int					 	ft_prepare(t_printf *p, const char *format);
+int						ft_prepare(t_printf *p, const char *format);
 
 /*
 **  SOLVER
 */
 
+void					ft_cycle6(t_wid *q, t_rd **read);
 int						ft_solver(t_rd **read, t_out *output);
 int						ft_app_fl(t_rd **read);
 int						ft_app_d_prs(t_rd **read);
@@ -192,7 +196,6 @@ void					ft_out_cnt(t_out *output);
 
 int						t_str(char *s, char **t);
 int						mexp(t_flts l);
-char					*ft_d(int64_t n);
 char					*ft_u(u_int64_t n);
 char					*ft_c(wchar_t c, int a, t_rd **read);
 char					*ft_e(long double e, int a);

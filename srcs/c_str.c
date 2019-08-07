@@ -12,13 +12,13 @@
 
 #include "ft_printf.h"
 
-void    c_str(char *s, char **c, int i, int k)
+void	c_str(char *s, char **c, int i, int k)
 {
-    if (!(*c = (char *)malloc(sizeof(char) * (k - i + 1))))
-        return ;
-    (*c)[k - i] = '\0';
-    k = i - 1;
-    i = -1;
-    while (s[++k])
-        (*c)[++i] = s[k];
+	if (!(*c = (char *)malloc(sizeof(char) * (k - i + 1))))
+		return ;
+	(*c)[k - i] = '\0';
+	k = i - 1;
+	i = -1;
+	while (s[++k])
+		(*c)[++i] = s[k];
 }

@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   rnd_z.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 10:04:30 by shunt             #+#    #+#             */
-/*   Updated: 2019/06/24 10:04:33 by shunt            ###   ########.fr       */
+/*   Updated: 2019/08/07 02:00:07 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    rnd_z(char **s, int i, size_t a, unsigned short f)
+void	rnd_z(char **s, int i, size_t a, unsigned short f)
 {
 	char	*r;
 
-    i = -1;
-    while ((*s)[++i] && (*s)[i] != '.')
-    	;
+	i = -1;
+	while ((*s)[++i] && (*s)[i] != '.')
+		;
 	if ((*s)[i + 1] && (*s)[i + 1] >= '5')
 	{
 		(*s)[i] = '\0';
@@ -33,7 +33,7 @@ void    rnd_z(char **s, int i, size_t a, unsigned short f)
 	}
 	else
 		(*s)[i] = '\0';
-	if (!a && f IS_O)
+	if (!a && f & F_OCT)
 	{
 		(*s)[i] = '.';
 		(*s)[i + 1] = '\0';

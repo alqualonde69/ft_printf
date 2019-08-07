@@ -12,22 +12,22 @@
 
 #include "ft_printf.h"
 
-void    rndg(char **s, int i)
+void	rndg(char **s, int i)
 {
-    char    *t;
-    int     l;
+	char	*t;
+	int		l;
 
-    if ((*s)[i] < '5' || ((*s)[i] == '5' && !((*s)[i - 1] % 2)))
+	if ((*s)[i] < '5' || ((*s)[i] == '5' && !((*s)[i - 1] % 2)))
 		(*s)[i] = '\0';
-    else if ((*s)[i] > '5' || ((*s)[i] == '5' && (*s)[i - 1] % 2))
-    {
+	else if ((*s)[i] > '5' || ((*s)[i] == '5' && (*s)[i - 1] % 2))
+	{
 		(*s)[i] = '\0';
-        l = ft_strlen(*s);
-        t = (char *)malloc(sizeof(char) * (l + 1));
-        ft_memset(t, '0', l);
-        t[l] = '\0';
-        t[l - 1] = '1';
-        str_ad(s, t);
-        free(t);
-    }
+		l = ft_strlen(*s);
+		t = (char *)malloc(sizeof(char) * (l + 1));
+		ft_memset(t, '0', l);
+		t[l] = '\0';
+		t[l - 1] = '1';
+		str_ad(s, t);
+		free(t);
+	}
 }

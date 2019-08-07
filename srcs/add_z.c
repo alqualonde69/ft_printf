@@ -12,17 +12,17 @@
 
 #include "ft_printf.h"
 
-char  *add_z(char *s, int z)
+char	*add_z(char *s, int z)
 {
-    int		i;
+	int		i;
 
-    i = -1;
-    while (s[++i] && s[i + 1] == '0')
-        ;
-    while (s[++i])
-    {
-        i - z >= 0 ? s[i - z] = s[i] : 0;
-        s[i] = '0';
-    }
-    return (s);
+	i = -1;
+	while (s[++i] && s[i + 1] == '0')
+		;
+	while (s[++i])
+	{
+		i - z >= 0 ? s[i - z] = s[i] : 0;
+		s[i] = '0';
+	}
+	return (s);
 }

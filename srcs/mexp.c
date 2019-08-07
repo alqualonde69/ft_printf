@@ -12,19 +12,19 @@
 
 #include "ft_printf.h"
 
-int     mexp(t_flts l)
+int	mexp(t_flts l)
 {
-    int     a;
-    int     e;
-    int     i;
+	int	a;
+	int	e;
+	int	i;
 
-    a = 14;
-    e = -16383;
-    i = 0;
-    while (++i < 16)
-    {
-        e += (l.y[4] & (0x8000 >> i)) ? pw(2, a) : 0;
-        a--;
-    }
-    return (e);
+	a = 14;
+	e = -16383;
+	i = 0;
+	while (++i < 16)
+	{
+		e += (l.y[4] & (0x8000 >> i)) ? pw(2, a) : 0;
+		a--;
+	}
+	return (e);
 }

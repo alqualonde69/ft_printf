@@ -12,13 +12,13 @@
 
 #include "printf.h"
 
-long long   pw(long long n, int p)
+long long	pw(long long n, int p)
 {
-    if (p == 0)
-        return (1);
-    if (p == 1)
-        return (n);
-    if (p > 1)
-        n *= pw(n, p - 1);
-    return (n);
+	if (p == 0)
+		return (1);
+	if (p == 1)
+		return (n);
+	if (p > 1)
+		n *= pw(n, p - 1);
+	return (n);
 }

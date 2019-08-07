@@ -12,26 +12,26 @@
 
 #include "ft_printf.h"
 
-char    *ft_s(char *s)
+char	*ft_s(char *s)
 {
-    char    *r;
+	char	*r;
 
-    if (s)
-    {
-        if (!(r = ft_strdup(s)))
-            return (NULL);
-    }
-    else
-    {
-        if (!(r = (char *)malloc(sizeof(char) * 7)))
-            return (NULL);
-        r[0] = '(';
-        r[1] = 'n';
-        r[2] = 'u';
-        r[3] = 'l';
-        r[4] = 'l';
-        r[5] = ')';
-        r[6] = '\0';
-    }
-    return (r);
+	if (s)
+	{
+		if (!(r = ft_strdup(s)))
+			return (NULL);
+	}
+	else
+	{
+		if (!(r = (char *)malloc(sizeof(char) * 7)))
+			return (NULL);
+		r[0] = '(';
+		r[1] = 'n';
+		r[2] = 'u';
+		r[3] = 'l';
+		r[4] = 'l';
+		r[5] = ')';
+		r[6] = '\0';
+	}
+	return (r);
 }

@@ -30,13 +30,14 @@ static void	ns(char **s)
 
 void		str_ad(char **s1, char *s2)
 {
-    int     i;
-    i = ft_strlen(*s1);
-    while (--i >= 0)
-    {
+	int		i;
+
+	i = ft_strlen(*s1);
+	while (--i >= 0)
+	{
 		(*s1)[i] = (*s1)[i] - '0' + s2[i];
-        if ((*s1)[i] > '9')
-        {
+		if ((*s1)[i] > '9')
+		{
 			(*s1)[i] -= 10;
 			if (i - 1 >= 0 && (*s1)[i - 1] != '.')
 				++(*s1)[i - 1];
@@ -44,6 +45,6 @@ void		str_ad(char **s1, char *s2)
 				++(*s1)[i - 2];
 			else if (i - 1 < 0)
 				ns(s1);
-        }
-    }
+		}
+	}
 }

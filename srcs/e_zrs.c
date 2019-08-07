@@ -12,15 +12,15 @@
 
 #include "ft_printf.h"
 
-void    e_zrs(char **s, int a, int i)
+void	e_zrs(char **s, int a, int i)
 {
-    char    *t;
-    char    *cl;
-    int     k;
+	char	*t;
+	char	*cl;
+	int		k;
 
-    if (a)
-    {
-		t = (char *) malloc(sizeof(char) * (a + i + 1));
+	if (a)
+	{
+		t = (char *)malloc(sizeof(char) * (a + i + 1));
 		t[a + i] = '\0';
 		k = -1;
 		while ((*s)[++k])
@@ -29,8 +29,8 @@ void    e_zrs(char **s, int a, int i)
 			t[k++] = '0';
 		cl = *s;
 		*s = t;
-    	free(cl);
-    }
-    else
+		free(cl);
+	}
+	else
 		(*s)[i - 1] = '\0';
 }

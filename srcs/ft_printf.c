@@ -61,6 +61,17 @@ int		ft_prepare(t_printf *p, const char *format)
 	p->read->strlen = ft_strlen(format);
 	p->read->smb_cnt = 0;
 	p->read->prev = NULL;
+	p->read->mod = NULL;
+	p->read->mod2 = NULL;
+	p->read->mod_smb = 0;
+	p->read->zero = 0;
+	p->read->kostil = 0;
+	p->read->width = 0;
+	p->read->flag = 0;
+	p->read->prs = 6;
+	p->read->size = 0;
+	p->read->next = NULL;
+	p->read->sign = 0;
 	return (SUCCESS);
 }
 
@@ -70,9 +81,9 @@ int		ft_printf(const char *format, ...)
 
 	if (!(*format))
 		return (0);
-	va_start(p.ap, format);
 	if (!(ft_prepare(&p, format)))
 		return (0);
+	va_start(p.ap, format);
 	while (format[p.read->smb_cnt])
 	{
 		if (!(p.read->next = ft_newlist(&p.read)))

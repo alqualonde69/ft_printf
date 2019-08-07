@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_p.c                                            :+:      :+:    :+:   */
+/*   ft_bufjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/14 12:43:13 by shunt             #+#    #+#             */
-/*   Updated: 2019/06/14 12:43:14 by shunt            ###   ########.fr       */
+/*   Created: 2019/08/07 01:29:19 by shunt             #+#    #+#             */
+/*   Updated: 2019/08/07 01:29:21 by shunt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*int_p(int e, char *man)
+char	*ft_bufjoin(char *s1, char *s2, int b1, int b2)
 {
-	char	*in;
-	char	*tmp;
+	char	*p;
 	int		i;
+	int		k;
 
-	tmp = NULL;
-	if (!(in = (char *)malloc(sizeof(char) * 17001)))
+	i = 0;
+	k = -1;
+	if (!s1 || !s2)
+		return (0);
+	if (!(p = (char *)malloc(sizeof(char) * (b1 + b2 + 1))))
 		return (NULL);
-	ft_memset(in, '0', 17000);
-	in[17000] = '\0';
-	i = -1;
-	while (--e > -1 && man[++i])
-		if (man[i] == '1')
-		{
-			tmp ? free(tmp) : 0;
-			if (!(tmp = pw_to_str(2, e)))
-				return (NULL);
-			str_ad(&in, tmp);
-		}
-	return (in);
+	while (i < b1)
+		p[i++] = *s1++;
+	while (++k < b2)
+		p[i++] = *s2++;
+	p[i++] = '\0';
+	return (p);
 }

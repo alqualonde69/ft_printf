@@ -3,28 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ox.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 01:37:04 by shunt             #+#    #+#             */
-/*   Updated: 2019/07/11 02:02:32 by huller           ###   ########.fr       */
+/*   Created: 2019/08/06 23:55:44 by shunt             #+#    #+#             */
+/*   Updated: 2019/08/07 01:47:52 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char *ft_ro(char **s, size_t prs, t_rd **read, int g)
+char	*ft_ro(char **s, size_t prs, t_rd **read, int g)
 {
-	char *r;
-	int i;
-	int j;
-	int l;
+	char	*r;
+	int		i[3];
 
-	l = ft_strlen(*s);
+	i[2] = ft_strlen(*s);
 	(*read)->kostil = g ? 5 : 4;
-	if (*s[0] == '0' && !(*s)[1])
-		(*read)->kostil = 4;
-	if ((*s)[0] == '0' && !(*s)[1] && !prs && (!((*read)->flag IS_O) ||
-		(*read)->mod_smb == 'x' || (*read)->mod_smb == 'X'))
+	(*s[0] == '0' && !(*s)[1]) ? (*read)->kostil = 4 : 0;
+	if ((*s)[0] == '0' && !(*s)[1] && !prs && (!((*read)->flag & F_OCT) ||
+			(*read)->mod_smb == 'x' || (*read)->mod_smb == 'X'))
 	{
 		if (!(r = (char *)malloc(sizeof(char) * 1)))
 			return (NULL);
@@ -34,32 +31,25 @@ char *ft_ro(char **s, size_t prs, t_rd **read, int g)
 	if (!(r = (char *)malloc(sizeof(char) * (prs + 1))))
 		return (NULL);
 	r[prs] = '\0';
-	i = -1;
-	while (++i < (int)(prs - l))
-		r[i] = '0';
-	j = -1;
-	while ((*s)[++j])
-		r[i++] = (*s)[j];
+	i[0] = -1;
+	while (++i[0] < (int)(prs - i[2]))
+		r[i[0]] = '0';
+	i[1] = -1;
+	while ((*s)[++i[1]])
+		r[i[0]++] = (*s)[i[1]];
 	free(*s);
 	return (r);
 }
 
-char    *ft_ox(u_int64_t o, int a, int b)
+char	*ft_ox(u_int64_t o, int a, int b)
 {
-	char *s;
+	char	*s;
 
-//    if (!o)
-//    {
-//        if (!(s = (char *)malloc(sizeof(char))))
-//            return (NULL);
-//        s[0] = '\0';
-//        return (s);
-//    }
 	s = NULL;
 	if (a == 8)
 	{
-	    if (!(s = u_itoa_base(o, 8, 1)))
-		    return (NULL);
+		if (!(s = u_itoa_base(o, 8, 1)))
+			return (NULL);
 	}
 	else if (a == 16)
 	{
@@ -67,7 +57,9 @@ char    *ft_ox(u_int64_t o, int a, int b)
 			return (NULL);
 	}
 	else if (a == 2)
+	{
 		if (!(s = u_itoa_base(o, 2, 1)))
 			return (NULL);
+	}
 	return (s);
 }

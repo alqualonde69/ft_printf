@@ -12,18 +12,18 @@
 
 #include "ft_printf.h"
 
-int    t_str(char *s, char **t)
+int		t_str(char *s, char **t)
 {
-    int     i;
+	int		i;
 
-    i = -1;
-    while (s[++i] && s[i] != 'e' && s[i] != 'E')
-        ;
-    if (!(*t = (char *)malloc(sizeof(char) * (i + 1))))
-        return (0);
-    (*t)[i] = '\0';
-    i = -1;
-    while (s[++i] && s[i] != 'e' && s[i] != 'E')
-        (*t)[i] = s[i];
-    return (i);
+	i = -1;
+	while (s[++i] && s[i] != 'e' && s[i] != 'E')
+		;
+	if (!(*t = (char *)malloc(sizeof(char) * (i + 1))))
+		return (0);
+	(*t)[i] = '\0';
+	i = -1;
+	while (s[++i] && s[i] != 'e' && s[i] != 'E')
+		(*t)[i] = s[i];
+	return (i);
 }

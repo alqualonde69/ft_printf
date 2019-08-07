@@ -12,28 +12,29 @@
 
 #include "ft_printf.h"
 
-char  *pw_to_str(int a, int b)
+char	*pw_to_str(int a, int b)
 {
-    char  *s;
-    int i;
-    int tmp = a;
-    if (!(s = (char *)malloc(sizeof(char) * 17001)))
+	char	*s;
+	int		i;
+	int		tmp;
 
-        return (NULL);
-    ft_memset(s, '0', 17000);
-    s[17000] = '\0';
-    if (b == 0)
-    {
-        s[16999] = '1';
-        return (s);
-    }
-    i = 17000;
-    while (a)
-    {
-        s[--i] = (a % 10) + '0';
-        a /= 10;
-    }
-    while (b-- > 1)
-        str_ml(&s, tmp);
-    return (s);
+	tmp = a;
+	if (!(s = (char *)malloc(sizeof(char) * 17001)))
+		return (NULL);
+	ft_memset(s, '0', 17000);
+	s[17000] = '\0';
+	if (b == 0)
+	{
+		s[16999] = '1';
+		return (s);
+	}
+	i = 17000;
+	while (a)
+	{
+		s[--i] = (a % 10) + '0';
+		a /= 10;
+	}
+	while (b-- > 1)
+		str_ml(&s, tmp);
+	return (s);
 }

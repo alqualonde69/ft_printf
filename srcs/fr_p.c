@@ -12,11 +12,11 @@
 
 #include "ft_printf.h"
 
-static char *fr_ne(int e, char *man)
+static char	*fr_ne(int e, char *man)
 {
-	char 	*fr;
-	int 	i;
-	int 	k;
+	char	*fr;
+	int		i;
+	int		k;
 
 	k = e + 64;
 	fr = (char *)malloc(sizeof(char) * 17001);
@@ -32,24 +32,24 @@ static char *fr_ne(int e, char *man)
 	return (fr);
 }
 
-char    *fr_p(int i, char *man)
+char		*fr_p(int i, char *man)
 {
-    char    *fr;
-    int     len;
-    int     e;
+	char	*fr;
+	int		len;
+	int		e;
 
-    if (i < 0)
+	if (i < 0)
 		return (fr_ne(i * -1, man));
-    fr = (char *)malloc(sizeof(char) * 17001);
-    ft_memset(fr, '0', 17000);
-    fr[17000] = '\0';
-    len = ft_strlen(man + i + 1);
-    e = 1;
-    while (man[++i])
-    {
-        if (man[i] == '1')
-            str_ad(&fr, add_z(pw_to_str(5, e), len - e));
-        ++e;
-    }
-    return (fr);
+	fr = (char *)malloc(sizeof(char) * 17001);
+	ft_memset(fr, '0', 17000);
+	fr[17000] = '\0';
+	len = ft_strlen(man + i + 1);
+	e = 1;
+	while (man[++i])
+	{
+		if (man[i] == '1')
+			str_ad(&fr, add_z(pw_to_str(5, e), len - e));
+		++e;
+	}
+	return (fr);
 }

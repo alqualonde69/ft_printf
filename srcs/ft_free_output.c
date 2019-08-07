@@ -15,7 +15,7 @@
 void	ft_cycle2(t_rd **read, const char *format, int *r)
 {
 	while (format[(*read)->smb_cnt] >= '0'
-		   && format[(*read)->smb_cnt] <= '9')
+		&& format[(*read)->smb_cnt] <= '9')
 	{
 		*r += format[(*read)->smb_cnt] - '0';
 		if (format[(*read)->smb_cnt + 1] >= '0'
@@ -28,9 +28,9 @@ void	ft_cycle2(t_rd **read, const char *format, int *r)
 void	ft_cycle(t_rd **rd, const char *format)
 {
 	while (format[(*rd)->smb_cnt] == 'l' || format[(*rd)->smb_cnt] == 'h' ||
-		   format[(*rd)->smb_cnt] == 'j' || format[(*rd)->smb_cnt] == 'z' ||
-		   format[(*rd)->smb_cnt] == 'L' || format[(*rd)->smb_cnt] == 't')
-		++(*rd)->smb_cnt;
+		format[(*rd)->smb_cnt] == 'j' || format[(*rd)->smb_cnt] == 'z' ||
+		format[(*rd)->smb_cnt] == 'L' || format[(*rd)->smb_cnt] == 't')
+		++((*rd)->smb_cnt);
 }
 
 int		ft_k(t_rd **read, const char *format, va_list **ap, t_out *out)
@@ -53,8 +53,7 @@ int		ft_k(t_rd **read, const char *format, va_list **ap, t_out *out)
 	}
 	else if (format[(*read)->smb_cnt] == '%')
 		ft_put_percent(read);
-	else
-	if (!(chck_nthng(format, out, read)))
+	else if (!(chck_nthng(format, out, read)))
 		return (0);
 	return (SUCCESS);
 }

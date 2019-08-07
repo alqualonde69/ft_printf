@@ -28,8 +28,10 @@ void	chck_g(t_rd **read, va_list **ap, int a)
 	{
 		(*read)->mod_smb = 'G';
 		if ((*read)->size == 128)
-			(*read)->mod = ft_g(va_arg(**ap, long double), 0, (*read)->prs, (*read)->flag);
+			(*read)->mod = ft_g(va_arg(**ap, long double), 0, (*read)->prs,
+					(*read)->flag);
 		else
-			(*read)->mod = ft_g(va_arg(**ap, double), 0, (*read)->prs, (*read)->flag);
+			(*read)->mod = ft_g(va_arg(**ap, double), 0, (*read)->prs,
+					(*read)->flag);
 	}
 }

@@ -12,11 +12,11 @@
 
 #include "ft_printf.h"
 
-char    *ft_u(u_int64_t n)
+char	*ft_u(u_int64_t n)
 {
-    char *s;
+	char *s;
 
-    if (!(s = u_itoa(n)))
-        return (NULL);
-    return (s);
+	if (!(s = u_itoa(n)))
+		return (NULL);
+	return (s);
 }

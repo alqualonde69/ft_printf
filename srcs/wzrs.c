@@ -12,21 +12,21 @@
 
 #include "ft_printf.h"
 
-void    wzrs(char **t)
+void	wzrs(char **t)
 {
-    int     i;
-    int     j;
-    char    *cp;
+	int		i;
+	int		j;
+	char	*cp;
 
-    i = ft_strlen(*t);
-    while (--i >= 0 && (*t)[i] == '0')
-        ;
-    (*t)[i] == '.' ? --i : 0;
-    cp = (char *)malloc(sizeof(char) * (i + 2));
-    cp[i + 1] = '\0';
-    j = -1;
-    while (++j < i + 1)
-        cp[j] = (*t)[j];
-    free(*t);
-    *t = cp;
+	i = ft_strlen(*t);
+	while (--i >= 0 && (*t)[i] == '0')
+		;
+	(*t)[i] == '.' ? --i : 0;
+	cp = (char *)malloc(sizeof(char) * (i + 2));
+	cp[i + 1] = '\0';
+	j = -1;
+	while (++j < i + 1)
+		cp[j] = (*t)[j];
+	free(*t);
+	*t = cp;
 }

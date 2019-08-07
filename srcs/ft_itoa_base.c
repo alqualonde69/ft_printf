@@ -12,38 +12,38 @@
 
 #include "ft_printf.h"
 
-int     ft_or(u_int64_t n, u_int64_t b)
+int		ft_or(u_int64_t n, u_int64_t b)
 {
-    int     a;
+	int		a;
 
-    a = 1;
-    while (n / b)
-    {
-        n /= b;
-        ++a;
-    }
-    return (a);
+	a = 1;
+	while (n / b)
+	{
+		n /= b;
+		++a;
+	}
+	return (a);
 }
 
-char    *u_itoa_base(u_int64_t n, u_int64_t b, int c)
+char	*u_itoa_base(u_int64_t n, u_int64_t b, int c)
 {
-    int     l;
-    char    *s;
+	int		l;
+	char	*s;
 
-    if (b < 2 || b > 16 || b == 10)
-        return (NULL);
-    l = ft_or(n, b);
-    if (!(s = (char *)malloc(sizeof(char) * (l + 1))))
-        return (NULL);
-    s[l] = '\0';
-    n == 0 ? s[0] = '0' : 0;
-    while (n)
-    {
-        if (n % b < 10)
-            s[--l] = n % b + 48;
-        else
-            s[--l] = c ? n % b + 87 : n % b + 55;
-        n /= b;
-    }
-    return (s);
+	if (b < 2 || b > 16 || b == 10)
+		return (NULL);
+	l = ft_or(n, b);
+	if (!(s = (char *)malloc(sizeof(char) * (l + 1))))
+		return (NULL);
+	s[l] = '\0';
+	n == 0 ? s[0] = '0' : 0;
+	while (n)
+	{
+		if (n % b < 10)
+			s[--l] = n % b + 48;
+		else
+			s[--l] = c ? n % b + 87 : n % b + 55;
+		n /= b;
+	}
+	return (s);
 }

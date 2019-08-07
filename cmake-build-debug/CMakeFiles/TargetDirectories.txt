@@ -1,3 +1,0 @@
-/Users/shunt/Desktop/hg/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/shunt/Desktop/hg/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/shunt/Desktop/hg/cmake-build-debug/CMakeFiles/hg.dir
